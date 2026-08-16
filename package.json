@@ -1,0 +1,14 @@
+{
+  "name": "quickshop-20-slide-presentation",
+  "version": "1.0.0",
+  "description": "Interactive 20-Slide Web Presentation Platform for QuickShop Enterprise E-Commerce Platform",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite --port 3000 --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.2"
+  }
+}
