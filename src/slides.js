@@ -5,10 +5,10 @@ export const slidesData = [
     title: "",
     subtitle: "",
     layout: "hero-layout",
-    image: "/assets/Banner.png",
+    image: "./assets/Banner.png",
     content: `
       <div class="hero-banner-container" style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 16px;">
-        <img src="/assets/Banner.png" alt="Hero Banner" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1;" />
+        <img src="./assets/Banner.png" alt="Hero Banner" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1;" />
         <div class="hero-content-box" style="position: relative; z-index: 2; padding: 2.5rem; border-radius: 20px; max-width: 950px; text-align: center;">
           <h1 class="slide-main-heading" style="font-size: 2.8rem; margin-bottom: 1rem; line-height: 1.2;">Modern Angular Unit Testing with Jest and Testing Library</h1>
         </div>
@@ -679,7 +679,7 @@ module.exports = {
           <div>
             <div class="card-icon" style="margin-bottom: 0.5rem;"><i class="ph ph-globe-hemisphere-west"></i> 🌐 In-Memory HTTP Mock Architecture</div>
             <div style="background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: 10px; padding: 0.6rem; text-align: center; margin-bottom: 0.8rem;">
-              <img src="/assets/mock-http.png" alt="HTTP Mocking Architecture Diagram" style="width: 100%; object-fit: contain; border-radius: 6px;" />
+              <img src="./assets/mock-http.png" alt="HTTP Mocking Architecture Diagram" style="width: 100%; object-fit: contain; border-radius: 6px;" />
             </div>
           </div>
 
@@ -876,7 +876,7 @@ module.exports = {
           <div>
             <div class="card-icon" style="margin-bottom: 0.5rem;"><i class="ph ph-globe-hemisphere-west"></i> 🌐 Live Network Call Architecture</div>
             <div style="background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: 10px; padding: 0.6rem; text-align: center; margin-bottom: 0.8rem;">
-              <img src="/assets/http-call.png" alt="Real HTTP Call Flow Diagram" style="width: 100%; max-height: 310px; object-fit: contain; border-radius: 6px;" />
+              <img src="./assets/http-call.png" alt="Real HTTP Call Flow Diagram" style="width: 100%; max-height: 310px; object-fit: contain; border-radius: 6px;" />
             </div>
           </div>
 
