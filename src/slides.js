@@ -106,21 +106,21 @@ export const slidesData = [
                 </td>
               </tr>
               <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: 0.65rem 1.1rem; vertical-align: top; border-right: 1px solid var(--surface-border);">
+                <td style="padding: 0.75rem 1.1rem; vertical-align: top; border-right: 1px solid var(--surface-border);">
                   <strong style="color: var(--text-main); display: block; margin-bottom: 0.2rem;">⚙️ More Setup & Maintenance</strong>
                   <span style="font-size: 0.82rem; color: var(--text-muted);">Requires browser launchers and additional configuration for the testing environment.</span>
                 </td>
-                <td style="padding: 0.65rem 1.1rem; vertical-align: top;">
+                <td style="padding: 0.75rem 1.1rem; vertical-align: top;">
                   <strong style="color: var(--text-main); display: block; margin-bottom: 0.2rem;">🧩 Built-in Mocks & Coverage</strong>
                   <span style="font-size: 0.82rem; color: var(--text-muted);">Provides mocking, spying, assertions, and code coverage within the Jest ecosystem.</span>
                 </td>
               </tr>
               <tr style="background: rgba(255, 255, 255, 0.02);">
-                <td style="padding: 0.65rem 1.1rem; vertical-align: top; border-right: 1px solid var(--surface-border);">
+                <td style="padding: 0.75rem 1.1rem; vertical-align: top; border-right: 1px solid var(--surface-border);">
                   <strong style="color: var(--text-main); display: block; margin-bottom: 0.2rem;">⚠️ Deprecated Status</strong>
                   <span style="font-size: 0.82rem; color: var(--text-muted);">Deprecated by the Angular core team, encouraging migration to modern test runners.</span>
                 </td>
-                <td style="padding: 0.65rem 1.1rem; vertical-align: top;">
+                <td style="padding: 0.75rem 1.1rem; vertical-align: top;">
                   <strong style="color: var(--text-main); display: block; margin-bottom: 0.2rem;">🌟 Strong Community</strong>
                   <span style="font-size: 0.82rem; color: var(--text-muted);">Vibrant open-source ecosystem, active maintenance, and massive industry adoption.</span>
                 </td>
@@ -516,7 +516,7 @@ module.exports = {
 
             <div class="glass-card" style="padding: 0.6rem 0.8rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); margin-bottom: 0.6rem; overflow-y: auto; max-height: 350px;">
               <div style="font-size: 0.7rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.3rem;">counter.component.spec.ts</div>
-              <pre style="margin: 0; font-size: 0.69rem; font-family: monospace; color: var(--text-main); line-height: 1.35;"><span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'CounterComponent'</span>, () =&gt; {
+              <pre style="margin: 0; font-size: 0.75rem; font-family: monospace; color: var(--text-main); line-height: 1.35;"><span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'CounterComponent'</span>, () =&gt; {
   <span style="color: #f472b6;">let</span> fixture: ComponentFixture&lt;CounterComponent&gt;;
   <span style="color: #f472b6;">let</span> component: CounterComponent;
 
@@ -578,7 +578,7 @@ module.exports = {
         <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
           <div>
             <div class="card-icon" style="margin-bottom: 0.4rem;"><i class="ph ph-wrench"></i> 🛠️ UserService Implementation</div>
-            <div class="glass-card" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-primary); overflow-y: auto; max-height: 380px;">
+            <div class="glass-card" style="padding: 0.75rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-primary); overflow-y: auto; max-height: 380px;">
               <div style="font-size: 0.7rem; color: var(--accent-primary); font-weight: 700; margin-bottom: 0.3rem;">user.service.ts</div>
               <pre style="margin: 0; font-size: 0.68rem; font-family: monospace; color: var(--text-main); line-height: 1.38;"><span style="color: #38bdf8;">@Injectable</span>({ providedIn: <span style="color: #10b981;">'root'</span> })
 <span style="color: #f472b6;">export class</span> <span style="color: #38bdf8;">UserService</span> {
@@ -624,7 +624,7 @@ module.exports = {
         <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
           <div>
             <div class="card-icon" style="margin-bottom: 0.4rem;"><i class="ph ph-test-tube"></i> 🧪 UserService Spec (HttpTestingController)</div>
-            <div class="glass-card" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); overflow-y: auto; max-height: 380px;">
+            <div class="glass-card" style="padding: 0.75rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); overflow-y: auto; max-height: 380px;">
               <div style="font-size: 0.7rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.3rem;">user.service.spec.ts</div>
               <pre style="margin: 0; font-size: 0.68rem; font-family: monospace; color: var(--text-main); line-height: 1.38;"><span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'UserService (HTTP Testing)'</span>, () =&gt; {
   <span style="color: #f472b6;">let</span> service: UserService;
@@ -724,22 +724,22 @@ module.exports = {
             <div>
               <div class="card-icon" style="margin-bottom: 0.4rem; font-size: 0.85rem;"><i class="ph ph-arrows-clockwise"></i> 🔄 HTTP Test Execution Sequence</div>
               <div style="display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.6rem;">
-                <div style="background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: 6px; padding: 0.3rem 0.55rem; font-size: 0.69rem;">
+                <div style="background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: 6px; padding: 0.3rem 0.55rem; font-size: 0.75rem;">
                   <span style="font-weight: 700; color: var(--accent-primary);">Step A:</span> <code>service.getUsers()</code> &rarr; Pending Observable
                 </div>
-                <div style="background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: 6px; padding: 0.3rem 0.55rem; font-size: 0.69rem;">
+                <div style="background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: 6px; padding: 0.3rem 0.55rem; font-size: 0.75rem;">
                   <span style="font-weight: 700; color: var(--accent-secondary);">Step B:</span> <code>httpMock.expectOne(URL)</code> &rarr; Intercept request
                 </div>
-                <div style="background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: 6px; padding: 0.3rem 0.55rem; font-size: 0.69rem;">
+                <div style="background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: 6px; padding: 0.3rem 0.55rem; font-size: 0.75rem;">
                   <span style="font-weight: 700; color: #10b981;">Step C:</span> <code>req.flush(mockData)</code> &rarr; Emit mock response
                 </div>
-                <div style="background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: 6px; padding: 0.3rem 0.55rem; font-size: 0.69rem;">
+                <div style="background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: 6px; padding: 0.3rem 0.55rem; font-size: 0.75rem;">
                   <span style="font-weight: 700; color: #a78bfa;">Step D:</span> <code>expect(users).toEqual(mockData)</code> &rarr; Assert transformation
                 </div>
               </div>
             </div>
 
-            <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 6px; padding: 0.35rem 0.65rem;">
+            <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 6px; padding: 0.35rem 0.75rem;">
               <div style="font-size: 0.71rem; color: #f59e0b; font-weight: 700; margin-bottom: 0.05rem;">💡 Best Practice Rule</div>
               <p style="font-size: 0.66rem; color: var(--text-muted); margin: 0; line-height: 1.25;">
                 Always call <code>req.flush()</code> <em>after</em> setting up <code>expectOne()</code>, and run <code>httpMock.verify()</code> in <code>afterEach()</code>.
@@ -763,7 +763,7 @@ module.exports = {
         <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
           <div>
             <div class="card-icon" style="margin-bottom: 0.4rem;"><i class="ph ph-wrench"></i> 🛠️ UserService Implementation</div>
-            <div class="glass-card" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-primary); overflow-y: auto; max-height: 380px;">
+            <div class="glass-card" style="padding: 0.75rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-primary); overflow-y: auto; max-height: 380px;">
               <div style="font-size: 0.7rem; color: var(--accent-primary); font-weight: 700; margin-bottom: 0.3rem;">user.service.ts</div>
               <pre style="margin: 0; font-size: 0.67rem; font-family: monospace; color: var(--text-main); line-height: 1.38;"><span style="color: #38bdf8;">@Injectable</span>({ providedIn: <span style="color: #10b981;">'root'</span> })
 <span style="color: #f472b6;">export class</span> <span style="color: #38bdf8;">UserService</span> {
@@ -812,7 +812,7 @@ module.exports = {
         <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
           <div>
             <div class="card-icon" style="margin-bottom: 0.4rem;"><i class="ph ph-cloud-arrow-up"></i> 🌐 UserService (Real Live API Integration Test)</div>
-            <div class="glass-card" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); overflow-y: auto; max-height: 320px; margin-bottom: 0.6rem;">
+            <div class="glass-card" style="padding: 0.75rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); overflow-y: auto; max-height: 320px; margin-bottom: 0.6rem;">
               <div style="font-size: 0.7rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.3rem;">user.service.integration.spec.ts</div>
               <pre style="margin: 0; font-size: 0.66rem; font-family: monospace; color: var(--text-main); line-height: 1.36;"><span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'UserService (Real Live API Integration Test)'</span>, () =&gt; {
   <span style="color: #f472b6;">let</span> service: UserService;
@@ -894,22 +894,22 @@ module.exports = {
             <!-- Section 1: When Is a Real HTTP Call Useful? -->
             <div class="card-icon" style="margin-bottom: 0.4rem; font-size: 0.8rem;"><i class="ph ph-check-circle"></i> 💡 When Is a Real HTTP Call Useful?</div>
             <div style="display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.75rem;">
-              <div style="background: var(--surface-glass); border: 1px solid var(--accent-primary); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.69rem;">
+              <div style="background: var(--surface-glass); border: 1px solid var(--accent-primary); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.75rem;">
                 <strong style="color: var(--accent-primary);">Integration testing:</strong> Verify that multiple application layers work together seamlessly.
               </div>
-              <div style="background: var(--surface-glass); border: 1px solid var(--accent-secondary); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.69rem;">
+              <div style="background: var(--surface-glass); border: 1px solid var(--accent-secondary); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.75rem;">
                 <strong style="color: var(--accent-secondary);">API integration validation:</strong> Verify frontend communicates correctly with real backend endpoints.
               </div>
-              <div style="background: var(--surface-glass); border: 1px solid #10b981; border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.69rem;">
+              <div style="background: var(--surface-glass); border: 1px solid #10b981; border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.75rem;">
                 <strong style="color: #10b981;">End-to-end scenarios:</strong> Validate complete application workflows from UI to database.
               </div>
-              <div style="background: var(--surface-glass); border: 1px solid #a78bfa; border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.69rem;">
+              <div style="background: var(--surface-glass); border: 1px solid #a78bfa; border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.75rem;">
                 <strong style="color: #a78bfa;">Contract/API verification:</strong> Confirm frontend works with actual backend response structures.
               </div>
             </div>
 
             <!-- Section 2: Why Avoid Real HTTP Calls in Unit Tests? -->
-            <div style="background: rgba(248, 113, 113, 0.08); border: 1px solid rgba(248, 113, 113, 0.25); border-radius: 8px; padding: 0.5rem 0.7rem; margin-bottom: 0.65rem;">
+            <div style="background: rgba(248, 113, 113, 0.08); border: 1px solid rgba(248, 113, 113, 0.25); border-radius: 8px; padding: 0.5rem 0.7rem; margin-bottom: 0.75rem;">
               <div style="font-size: 0.73rem; color: #f87171; font-weight: 700; margin-bottom: 0.25rem;">⚠️ Why Avoid Real HTTP Calls in Unit Tests?</div>
               <div style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.67rem; color: var(--text-muted);">
                 <div>🐢 <strong>Slower</strong> — Network latency & backend processing delay test suite execution.</div>
@@ -924,7 +924,7 @@ module.exports = {
           <!-- Section 3: Key Takeaway -->
           <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 0.45rem 0.75rem;">
             <div style="font-size: 0.74rem; color: #10b981; font-weight: 700; margin-bottom: 0.15rem;">🎯 Key Takeaway</div>
-            <div style="display: flex; justify-content: space-around; font-size: 0.69rem; font-weight: 600; color: var(--text-main);">
+            <div style="display: flex; justify-content: space-around; font-size: 0.75rem; font-weight: 600; color: var(--text-main);">
               <span>🧪 <strong>Unit Test</strong> &rarr; <span style="color: #38bdf8;">Mock the HTTP layer</span></span>
               <span>⚡ <strong>Integration/E2E Test</strong> &rarr; <span style="color: #10b981;">Use real HTTP/API layer</span></span>
             </div>
@@ -946,7 +946,7 @@ module.exports = {
         <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
           <div>
             <div class="card-icon" style="margin-bottom: 0.45rem;"><i class="ph ph-package"></i> 📦 What is an Angular Library?</div>
-            <p style="font-size: 0.81rem; color: var(--text-muted); margin-bottom: 0.65rem; line-height: 1.45;">
+            <p style="font-size: 0.81rem; color: var(--text-muted); margin-bottom: 0.75rem; line-height: 1.45;">
               An <strong>Angular Library</strong> is a reusable, standalone Angular project containing components, services, directives, or utilities that can be shared across multiple applications or published to an npm registry.
             </p>
 
@@ -955,7 +955,7 @@ module.exports = {
               <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.4;">
                 Run the Angular CLI library generator inside your workspace:
               </div>
-              <pre style="margin: 0.35rem 0 0 0; padding: 0.45rem 0.65rem; background: black; border-radius: 6px; font-size: 0.72rem; font-family: monospace; color: #38bdf8;">ng generate library ui-lib
+              <pre style="margin: 0.35rem 0 0 0; padding: 0.45rem 0.75rem; background: black; border-radius: 6px; font-size: 0.72rem; font-family: monospace; color: #38bdf8;">ng generate library ui-lib
 <span style="color: #a2a2a2;"># or using the short alias:</span>
 ng g lib ui-lib</pre>
             </div>
@@ -984,7 +984,7 @@ ng g lib ui-lib</pre>
           <div>
             <div class="card-icon" style="margin-bottom: 0.45rem;"><i class="ph ph-terminal-window"></i> ⚡ Build Commands & Workflow</div>
 
-            <div class="glass-card" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); margin-bottom: 0.75rem;">
+            <div class="glass-card" style="padding: 0.75rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); margin-bottom: 0.75rem;">
               <div style="font-size: 0.72rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.3rem;">1. Build Command</div>
               <pre style="margin: 0; padding: 0.4rem 0.6rem; background: black; border-radius: 6px; font-size: 0.71rem; font-family: monospace; color: #10b981;"><span style="color: #a2a2a2;"># Build library into dist/ui-lib</span>
 ng build ui-lib
@@ -993,7 +993,7 @@ ng build ui-lib
 ng build ui-lib --watch</pre>
             </div>
 
-            <div class="glass-card" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid #a78bfa; margin-bottom: 0.75rem;">
+            <div class="glass-card" style="padding: 0.75rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid #a78bfa; margin-bottom: 0.75rem;">
               <div style="font-size: 0.72rem; color: #a78bfa; font-weight: 700; margin-bottom: 0.3rem;">2. Add Scripts to package.json</div>
               <pre style="margin: 0; font-size: 0.7rem; font-family: monospace; color: var(--text-main); line-height: 1.35;">"scripts": {
   "<span style="color: #38bdf8;">build:lib</span>": "ng build ui-lib",
@@ -1002,7 +1002,7 @@ ng build ui-lib --watch</pre>
 }</pre>
             </div>
 
-            <div class="glass-card" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid #10b981;">
+            <div class="glass-card" style="padding: 0.75rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid #10b981;">
               <div style="font-size: 0.72rem; color: #10b981; font-weight: 700; margin-bottom: 0.3rem;">3. Consuming Library Components in App</div>
               <pre style="margin: 0; font-size: 0.7rem; font-family: monospace; color: var(--text-main); line-height: 1.35;"><span style="color: var(--text-muted); font-style: italic;">// Import directly from the built library package</span>
 <span style="color: #f472b6;">import</span> { LibUserFormComponent } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'ui-lib'</span>;
@@ -1017,7 +1017,7 @@ ng build ui-lib --watch</pre>
             <div style="font-size: 0.74rem; color: #10b981; font-weight: 700; margin-bottom: 0.15rem;">
               🎯 Key Library Best Practice
             </div>
-            <p style="font-size: 0.69rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
               Always export components, directives, and models in <code>public-api.ts</code>. Build the library before building or serving the consuming application.
             </p>
           </div>
@@ -1041,7 +1041,7 @@ ng build ui-lib --watch</pre>
             <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.82rem;"><i class="ph ph-package"></i> 📦 1. Library Component Implementation</div>
             <div class="glass-card" style="padding: 0.55rem 0.75rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-primary); overflow-y: auto; max-height: 200px;">
               <div style="font-size: 0.68rem; color: var(--accent-primary); font-weight: 700; margin-bottom: 0.25rem;">lib-user-form.component.ts</div>
-              <pre style="margin: 0; font-size: 0.65rem; font-family: monospace; color: var(--text-main); line-height: 1.34;"><span style="color: #f472b6;">import</span> { Component, EventEmitter, Output, inject } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/core'</span>;
+              <pre style="margin: 0; font-size: 0.75rem; font-family: monospace; color: var(--text-main); line-height: 1.34;"><span style="color: #f472b6;">import</span> { Component, EventEmitter, Output, inject } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/core'</span>;
 <span style="color: #f472b6;">import</span> { FormBuilder, ReactiveFormsModule, Validators } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/forms'</span>;
 
 <span style="color: #38bdf8;">@Component</span>({
@@ -1072,7 +1072,7 @@ ng build ui-lib --watch</pre>
             <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.82rem;"><i class="ph ph-test-tube"></i> 🧪 2. Test Case Spec Implementation</div>
             <div class="glass-card" style="padding: 0.55rem 0.75rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); overflow-y: auto; max-height: 220px;">
               <div style="font-size: 0.68rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.25rem;">lib-user-form.component.spec.ts</div>
-              <pre style="margin: 0; font-size: 0.64rem; font-family: monospace; color: var(--text-main); line-height: 1.34;"><span style="color: #f472b6;">import</span> { <span style="color: #38bdf8;">render</span>, <span style="color: #38bdf8;">screen</span>, <span style="color: #38bdf8;">fireEvent</span> } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@testing-library/angular'</span>;
+              <pre style="margin: 0; font-size: 0.73rem; font-family: monospace; color: var(--text-main); line-height: 1.34;"><span style="color: #f472b6;">import</span> { <span style="color: #38bdf8;">render</span>, <span style="color: #38bdf8;">screen</span>, <span style="color: #38bdf8;">fireEvent</span> } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@testing-library/angular'</span>;
 <span style="color: #f472b6;">import</span> { provideNoopAnimations } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/platform-browser/animations'</span>;
 <span style="color: #f472b6;">import</span> { LibUserFormComponent } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'ui-lib'</span>;
 
@@ -1107,7 +1107,7 @@ ng build ui-lib --watch</pre>
 
             <div style="display: flex; flex-direction: column; gap: 0.45rem;">
               <!-- render() explanation -->
-              <div style="background: var(--surface-glass); border: 1px solid var(--accent-primary); border-radius: 7px; padding: 0.45rem 0.65rem;">
+              <div style="background: var(--surface-glass); border: 1px solid var(--accent-primary); border-radius: 7px; padding: 0.45rem 0.75rem;">
                 <div style="font-size: 0.74rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.15rem;">
                   1. <code>render(Component, options)</code>
                 </div>
@@ -1117,7 +1117,7 @@ ng build ui-lib --watch</pre>
               </div>
 
               <!-- screen explanation -->
-              <div style="background: var(--surface-glass); border: 1px solid var(--accent-secondary); border-radius: 7px; padding: 0.45rem 0.65rem;">
+              <div style="background: var(--surface-glass); border: 1px solid var(--accent-secondary); border-radius: 7px; padding: 0.45rem 0.75rem;">
                 <div style="font-size: 0.74rem; font-weight: 700; color: var(--accent-secondary); margin-bottom: 0.15rem;">
                   2. <code>screen.getByTestId('id')</code> & Queries
                 </div>
@@ -1127,7 +1127,7 @@ ng build ui-lib --watch</pre>
               </div>
 
               <!-- fireEvent explanation -->
-              <div style="background: var(--surface-glass); border: 1px solid #10b981; border-radius: 7px; padding: 0.45rem 0.65rem;">
+              <div style="background: var(--surface-glass); border: 1px solid #10b981; border-radius: 7px; padding: 0.45rem 0.75rem;">
                 <div style="font-size: 0.74rem; font-weight: 700; color: #10b981; margin-bottom: 0.15rem;">
                   3. <code>fireEvent.input()</code> & <code>fireEvent.click()</code>
                 </div>
@@ -1137,7 +1137,7 @@ ng build ui-lib --watch</pre>
               </div>
 
               <!-- provideNoopAnimations() explanation -->
-              <div style="background: var(--surface-glass); border: 1px solid #a78bfa; border-radius: 7px; padding: 0.45rem 0.65rem;">
+              <div style="background: var(--surface-glass); border: 1px solid #a78bfa; border-radius: 7px; padding: 0.45rem 0.75rem;">
                 <div style="font-size: 0.74rem; font-weight: 700; color: #a78bfa; margin-bottom: 0.15rem;">
                   4. <code>provideNoopAnimations()</code> & Spies
                 </div>
@@ -1178,20 +1178,20 @@ ng build ui-lib --watch</pre>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1.3fr; gap: 0.55rem; align-items: center;">
             <div style="background: var(--surface-glass); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; padding: 0.4rem 0.55rem; text-align: center;">
-              <div style="font-size: 0.65rem; color: #38bdf8; font-weight: 700;">Statements</div>
-              <div style="font-size: 0.64rem; color: var(--text-muted);">Executed code statements</div>
+              <div style="font-size: 0.75rem; color: #38bdf8; font-weight: 700;">Statements</div>
+              <div style="font-size: 0.73rem; color: var(--text-muted);">Executed code statements</div>
             </div>
             <div style="background: var(--surface-glass); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 6px; padding: 0.4rem 0.55rem; text-align: center;">
-              <div style="font-size: 0.65rem; color: #a78bfa; font-weight: 700;">Branches</div>
-              <div style="font-size: 0.64rem; color: var(--text-muted);">if/else & ternary paths</div>
+              <div style="font-size: 0.75rem; color: #a78bfa; font-weight: 700;">Branches</div>
+              <div style="font-size: 0.73rem; color: var(--text-muted);">if/else & ternary paths</div>
             </div>
             <div style="background: var(--surface-glass); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 6px; padding: 0.4rem 0.55rem; text-align: center;">
-              <div style="font-size: 0.65rem; color: #10b981; font-weight: 700;">Functions</div>
-              <div style="font-size: 0.64rem; color: var(--text-muted);">Methods & handlers invoked</div>
+              <div style="font-size: 0.75rem; color: #10b981; font-weight: 700;">Functions</div>
+              <div style="font-size: 0.73rem; color: var(--text-muted);">Methods & handlers invoked</div>
             </div>
             <div style="background: var(--surface-glass); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 6px; padding: 0.4rem 0.55rem; text-align: center;">
-              <div style="font-size: 0.65rem; color: #f59e0b; font-weight: 700;">Lines</div>
-              <div style="font-size: 0.64rem; color: var(--text-muted);">Physical lines executed</div>
+              <div style="font-size: 0.75rem; color: #f59e0b; font-weight: 700;">Lines</div>
+              <div style="font-size: 0.73rem; color: var(--text-muted);">Physical lines executed</div>
             </div>
             <div style="background: black; border: 1px solid var(--surface-border); border-radius: 6px; padding: 0.35rem 0.55rem;">
               <div style="font-size: 0.62rem; color: #38bdf8; font-weight: 700; margin-bottom: 0.15rem;">jest.config.js Threshold</div>
@@ -1205,17 +1205,17 @@ ng build ui-lib --watch</pre>
         <!-- Row 2: What You HAVE TO DO (Do's) -->
         <div class="glass-card" style="padding: 0.85rem 1.2rem; border-left: 4px solid #10b981; background: rgba(16, 185, 129, 0.04);">
           <div class="card-icon" style="margin-bottom: 0.35rem; color: #10b981; font-size: 0.82rem;"><i class="ph ph-check-circle"></i> ✅ WHAT YOU HAVE TO DO (Best Practices)</div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; font-size: 0.69rem; color: var(--text-muted);">
-            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2);">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; font-size: 0.75rem; color: var(--text-muted);">
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.75rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2);">
               <strong style="color: var(--text-main);">🎯 Cover Critical Business & Edge Cases:</strong> Focus tests on complex state transitions, form validators, signal computeds, and HTTP error branches.
             </div>
-            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2);">
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.75rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2);">
               <strong style="color: var(--text-main);">🛡️ Enforce CI Build Gates:</strong> Automatically block PRs in GitHub Actions if total coverage drops below threshold (e.g. 85% branch coverage).
             </div>
-            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2);">
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.75rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2);">
               <strong style="color: var(--text-main);">🧹 Exclude Non-Logic Artifacts:</strong> Ignore barrel files (<code>public-api.ts</code>), index exports, and environment configs via <code>coveragePathIgnorePatterns</code>.
             </div>
-            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2);">
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.75rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2);">
               <strong style="color: var(--text-main);">🧪 Test User Interactions & DOM:</strong> Verify actual rendered output and user events using Angular Testing Library rather than testing private internal methods.
             </div>
           </div>
@@ -1224,17 +1224,17 @@ ng build ui-lib --watch</pre>
         <!-- Row 3: What You DON'T DO (Don'ts) -->
         <div class="glass-card" style="padding: 0.85rem 1.2rem; border-left: 4px solid #ef4444; background: rgba(239, 68, 68, 0.04);">
           <div class="card-icon" style="margin-bottom: 0.35rem; color: #ef4444; font-size: 0.82rem;"><i class="ph ph-x-circle"></i> ❌ WHAT YOU DON'T DO (Pitfalls to Avoid)</div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; font-size: 0.69rem; color: var(--text-muted);">
-            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; font-size: 0.75rem; color: var(--text-muted);">
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.75rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
               <strong style="color: var(--text-main);">🚫 Don't Chase 100% Blindly:</strong> 100% coverage does NOT guarantee zero bugs. Chasing 100% leads to fragile, low-value tests that break on minor refactors.
             </div>
-            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.75rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
               <strong style="color: var(--text-main);">👻 Don't Write Assertless "Ghost" Tests:</strong> Invoking functions without <code>expect()</code> assertions just to pad coverage numbers gives false security without validating behavior.
             </div>
-            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.75rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
               <strong style="color: var(--text-main);">🚫 Don't Test Framework / Material Internals:</strong> Avoid testing Angular core framework logic or Material library internal DOM elements.
             </div>
-            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.75rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
               <strong style="color: var(--text-main);">⚠️ Don't Ignore Branch Coverage:</strong> Statement coverage alone can hide unhandled <code>else</code> or <code>catch</code> blocks. Always prioritize branch coverage.
             </div>
           </div>
@@ -1245,31 +1245,74 @@ ng build ui-lib --watch</pre>
   },
   {
     id: 16,
-    badge: "PERFORMANCE",
-    title: "Performance Engineering & Speed Optimization",
-    subtitle: "Achieving Sub-100ms Page Loads & High Frame Rates",
-    layout: "grid-4-boxes",
+    badge: "ENTERPRISE BEST PRACTICES",
+    title: "Enterprise Testing Best Practices",
+    subtitle: "Architectural Principles, Test Hygiene, and Scalable Testing Strategies for Production Teams",
+    layout: "cards-grid-4",
     content: `
-      <div class="cards-grid-4">
-        <div class="glass-card metric-card">
-          <div class="metric-val">98/100</div>
-          <div class="metric-lbl">Lighthouse Performance</div>
+      <div class="cards-grid-2" style="gap: 0.9rem; align-items: stretch;">
+        <!-- Pillar 1: Architecture & Isolation -->
+        <div class="glass-card accent-violet" style="padding: 0.9rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-buildings"></i> 🏛️ 1. Architecture & Test Isolation</div>
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.74rem; color: var(--text-muted);">
+              <div>🔹 <strong>AAA Pattern (Arrange-Act-Assert):</strong> Standardize test structure across engineering teams for clean readability.</div>
+              <div>🔹 <strong>Isolate External Dependencies:</strong> Always mock HTTP backends, router navigation, and local storage state.</div>
+              <div>🔹 <strong>Test via Public Contract:</strong> Query elements using <code>data-testid</code> attributes instead of brittle CSS/DOM selectors.</div>
+            </div>
+          </div>
+          <div style="margin-top: 0.5rem; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.72rem; color: #38bdf8;">
+            💡 <em>Rule: Tests should verify <strong>what</strong> the component does, not <strong>how</strong> it is implemented internally.</em>
+          </div>
         </div>
-        <div class="glass-card metric-card">
-          <div class="metric-val">&lt;45ms</div>
-          <div class="metric-lbl">API Response Time</div>
+
+        <!-- Pillar 2: Performance & Test Speed -->
+        <div class="glass-card accent-violet" style="padding: 0.9rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-gauge"></i> ⚡ 2. Speed & Execution Optimization</div>
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.74rem; color: var(--text-muted);">
+              <div>🔹 <strong>Parallel Test Workers:</strong> Run Jest in parallel mode (<code>jest --maxWorkers=50%</code>) for lightning-fast CI runs.</div>
+              <div>🔹 <strong>Disable Animations:</strong> Inject <code>provideNoopAnimations()</code> to avoid UI animation delays in specs.</div>
+              <div>🔹 <strong>Lightweight Component Wrappers:</strong> Prefer <code>render()</code> from <code>@testing-library/angular</code> over heavy <code>TestBed</code> setups.</div>
+            </div>
+          </div>
+          <div style="margin-top: 0.5rem; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.72rem; color: #10b981;">
+            ⚡ <em>Goal: Keep total unit test suite runtime under 30 seconds across the enterprise repository.</em>
+          </div>
         </div>
-        <div class="glass-card metric-card">
-          <div class="metric-val">60 FPS</div>
-          <div class="metric-lbl">UI Animation Rate</div>
+
+        <!-- Pillar 3: Test Hygiene & Maintenance -->
+        <div class="glass-card accent-violet" style="padding: 0.9rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-broom"></i> 🧹 3. Test Hygiene & State Cleanup</div>
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.74rem; color: var(--text-muted);">
+              <div>🔹 <strong>Strict Cleanup Lifecycle:</strong> Execute <code>jest.clearAllMocks()</code> and <code>httpMock.verify()</code> in <code>afterEach()</code>.</div>
+              <div>🔹 <strong>Idempotent Test Runs:</strong> Ensure each test runs independently without relying on execution order or shared state.</div>
+              <div>🔹 <strong>Behavioral Test Descriptions:</strong> Use clear specs: <code>it('should emit submitForm when form is valid')</code>.</div>
+            </div>
+          </div>
+          <div style="margin-top: 0.5rem; background: rgba(167, 139, 250, 0.08); border: 1px solid rgba(167, 139, 250, 0.25); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.72rem; color: #a78bfa;">
+            🛡️ <em>Rule: Prevent test leakage — no test should leave lingering HTTP requests or global state mutations.</em>
+          </div>
         </div>
-        <div class="glass-card metric-card">
-          <div class="metric-val">120 KB</div>
-          <div class="metric-lbl">Initial JS Bundle</div>
+
+        <!-- Pillar 4: CI/CD & Automated Quality Gates -->
+        <div class="glass-card accent-violet" style="padding: 0.9rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-git-merge"></i> 🚀 4. CI/CD & Automated Quality Gates</div>
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.74rem; color: var(--text-muted);">
+              <div>🔹 <strong>Automated Coverage Gates:</strong> Enforce 80%+ branch coverage in GitHub Actions before code merge.</div>
+              <div>🔹 <strong>Fail-Fast Pipeline:</strong> Execute TypeScript compilation & unit tests before running slower E2E suites.</div>
+              <div>🔹 <strong>Mock Data Factory:</strong> Standardize mock data generators (e.g., <code>createMockUser()</code>) across all spec files.</div>
+            </div>
+          </div>
+          <div style="margin-top: 0.5rem; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.72rem; color: #f59e0b;">
+            🔒 <em>Gatekeeper: Continuous Integration blocks any commit that breaks existing tests or drops coverage.</em>
+          </div>
         </div>
       </div>
     `,
-    notes: "Highlight performance metrics: Lighthouse score 98, fast API turnaround, 60fps animations."
+    notes: "Explain Slide 16: Enterprise Testing Best Practices across 4 key pillars: Architecture & Isolation, Speed & Optimization, Test Hygiene & State Cleanup, and CI/CD Quality Gates."
   },
   {
     id: 17,
