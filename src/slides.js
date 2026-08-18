@@ -955,8 +955,8 @@ module.exports = {
               <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.4;">
                 Run the Angular CLI library generator inside your workspace:
               </div>
-              <pre style="margin: 0.35rem 0 0 0; padding: 0.45rem 0.65rem; background: rgba(0,0,0,0.3); border-radius: 6px; font-size: 0.72rem; font-family: monospace; color: #38bdf8;">ng generate library ui-lib
-<span style="color: var(--text-muted);"># or using the short alias:</span>
+              <pre style="margin: 0.35rem 0 0 0; padding: 0.45rem 0.65rem; background: black; border-radius: 6px; font-size: 0.72rem; font-family: monospace; color: #38bdf8;">ng generate library ui-lib
+<span style="color: #a2a2a2;"># or using the short alias:</span>
 ng g lib ui-lib</pre>
             </div>
 
@@ -986,10 +986,10 @@ ng g lib ui-lib</pre>
 
             <div class="glass-card" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); margin-bottom: 0.75rem;">
               <div style="font-size: 0.72rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.3rem;">1. Build Command</div>
-              <pre style="margin: 0; padding: 0.4rem 0.6rem; background: rgba(0,0,0,0.3); border-radius: 6px; font-size: 0.71rem; font-family: monospace; color: #10b981;"><span style="color: var(--text-muted);"># Build library into dist/ui-lib</span>
+              <pre style="margin: 0; padding: 0.4rem 0.6rem; background: black; border-radius: 6px; font-size: 0.71rem; font-family: monospace; color: #10b981;"><span style="color: #a2a2a2;"># Build library into dist/ui-lib</span>
 ng build ui-lib
 
-<span style="color: var(--text-muted);"># Watch mode for continuous development</span>
+<span style="color: #a2a2a2;"># Watch mode for continuous development</span>
 ng build ui-lib --watch</pre>
             </div>
 
@@ -1030,92 +1030,136 @@ ng build ui-lib --watch</pre>
     id: 14,
     badge: "LIBRARY TESTING ARCHITECTURE",
     title: "Testing Angular Library Components",
-    subtitle: "How accessing library elements differs from standard application components and wrapper integration",
+    subtitle: "Library Component Implementation, Test Spec & Testing Utility Breakdown",
     layout: "split-grid",
     content: `
       <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
-        <!-- Left Column: Normal vs Library Component Access Comparison -->
-        <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
-          <div>
-            <div class="card-icon" style="margin-bottom: 0.4rem;"><i class="ph ph-package"></i> 📦 Accessing Normal vs Library Components</div>
-            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">
-              Testing shared Angular UI libraries (<code style="color: var(--accent-primary);">ui-lib</code>) requires a different access pattern than local app components.
-            </p>
+        <!-- Left Column: Two Divisions (Top: Library Component Implementation, Bottom: Test Spec) -->
+        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+          <!-- Division 1: Library Component Implementation -->
+          <div class="glass-card accent-violet" style="padding: 0.85rem 1.1rem;">
+            <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.82rem;"><i class="ph ph-package"></i> 📦 1. Library Component Implementation</div>
+            <div class="glass-card" style="padding: 0.55rem 0.75rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-primary); overflow-y: auto; max-height: 200px;">
+              <div style="font-size: 0.68rem; color: var(--accent-primary); font-weight: 700; margin-bottom: 0.25rem;">lib-user-form.component.ts</div>
+              <pre style="margin: 0; font-size: 0.65rem; font-family: monospace; color: var(--text-main); line-height: 1.34;"><span style="color: #f472b6;">import</span> { Component, EventEmitter, Output, inject } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/core'</span>;
+<span style="color: #f472b6;">import</span> { FormBuilder, ReactiveFormsModule, Validators } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/forms'</span>;
 
-            <div class="table-responsive" style="overflow-y: auto; max-height: 290px; border-radius: 8px; border: 1px solid var(--surface-border); margin-bottom: 0.6rem;">
-              <table class="styled-comparison-table" style="width: 100%; border-collapse: collapse; font-size: 0.78rem;">
-                <thead style="position: sticky; top: 0; background: rgba(18, 20, 32, 0.95); z-index: 5;">
-                  <tr style="border-bottom: 1px solid var(--surface-border);">
-                    <th style="padding: 0.4rem 0.6rem; text-align: left; color: #f472b6; width: 45%;">Local App Component</th>
-                    <th style="padding: 0.4rem 0.6rem; text-align: left; color: #38bdf8; width: 55%;">Library Component (ui-lib)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr style="border-bottom: 1px solid var(--surface-border);"><td style="padding: 0.35rem 0.6rem;"><code>import from './user-form'</code></td><td style="padding: 0.35rem 0.6rem; color: #38bdf8;"><code>import { LibUserFormComponent } from 'ui-lib'</code></td></tr>
-                  <tr style="border-bottom: 1px solid var(--surface-border); background: rgba(255,255,255,0.02);"><td style="padding: 0.35rem 0.6rem;">Relative local path access</td><td style="padding: 0.35rem 0.6rem; color: #38bdf8;">Imported via public package API / secondary entrypoint</td></tr>
-                  <tr style="border-bottom: 1px solid var(--surface-border);"><td style="padding: 0.35rem 0.6rem;">Direct class property inspection</td><td style="padding: 0.35rem 0.6rem; color: #38bdf8;">Public <code>@Input()</code> & <code>@Output()</code> contract testing</td></tr>
-                  <tr style="border-bottom: 1px solid var(--surface-border); background: rgba(255,255,255,0.02);"><td style="padding: 0.35rem 0.6rem;">Internal CSS selectors</td><td style="padding: 0.35rem 0.6rem; color: #38bdf8;">Decoupled <code>data-testid</code> attributes</td></tr>
-                  <tr><td style="padding: 0.35rem 0.6rem;">Local TestBed compilation</td><td style="padding: 0.35rem 0.6rem; color: #38bdf8;">Pre-compiled distribution artifact / isolated spec</td></tr>
-                </tbody>
-              </table>
+<span style="color: #38bdf8;">@Component</span>({
+  selector: <span style="color: #10b981;">'lib-user-form'</span>,
+  standalone: <span style="color: #f59e0b;">true</span>,
+  imports: [ReactiveFormsModule],
+  template: <span style="color: #10b981;">\`
+    &lt;form [formGroup]="form" (ngSubmit)="onSubmit()"&gt;
+      &lt;input data-testid="lib-input-name" formControlName="name" placeholder="Enter Name" /&gt;
+      &lt;button data-testid="lib-submit-btn" type="submit" [disabled]="form.invalid"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  \`</span>
+})
+<span style="color: #f472b6;">export class</span> <span style="color: #38bdf8;">LibUserFormComponent</span> {
+  <span style="color: #38bdf8;">@Output</span>() submitForm = <span style="color: #f472b6;">new</span> <span style="color: #38bdf8;">EventEmitter</span>&lt;{ name: string }&gt;();
+  <span style="color: #f472b6;">private</span> fb = <span style="color: #38bdf8;">inject</span>(FormBuilder);
+  form = <span style="color: #f472b6;">this</span>.fb.group({ name: [<span style="color: #10b981;">''</span>, Validators.required] });
+
+  <span style="color: #a78bfa;">onSubmit</span>() {
+    <span style="color: #f472b6;">if</span> (<span style="color: #f472b6;">this</span>.form.valid) <span style="color: #f472b6;">this</span>.submitForm.emit(<span style="color: #f472b6;">this</span>.form.getRawValue());
+  }
+}</pre>
             </div>
           </div>
 
-          <div style="background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 8px; padding: 0.5rem 0.75rem;">
-            <div style="font-size: 0.75rem; color: #a78bfa; font-weight: 700; margin-bottom: 0.15rem;">
-              🔑 Why Library Access Differs
-            </div>
-            <p style="font-size: 0.71rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
-              Library components are published or built into <code style="color: var(--accent-secondary);">dist/ui-lib</code>. Consumers test the <strong>public contract</strong> and rendered DOM via wrapper components rather than private internal implementation details.
-            </p>
-          </div>
-        </div>
+          <!-- Division 2: Library Testing Spec Code -->
+          <div class="glass-card accent-violet" style="padding: 0.85rem 1.1rem;">
+            <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.82rem;"><i class="ph ph-test-tube"></i> 🧪 2. Test Case Spec Implementation</div>
+            <div class="glass-card" style="padding: 0.55rem 0.75rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); overflow-y: auto; max-height: 220px;">
+              <div style="font-size: 0.68rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.25rem;">lib-user-form.component.spec.ts</div>
+              <pre style="margin: 0; font-size: 0.64rem; font-family: monospace; color: var(--text-main); line-height: 1.34;"><span style="color: #f472b6;">import</span> { <span style="color: #38bdf8;">render</span>, <span style="color: #38bdf8;">screen</span>, <span style="color: #38bdf8;">fireEvent</span> } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@testing-library/angular'</span>;
+<span style="color: #f472b6;">import</span> { provideNoopAnimations } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/platform-browser/animations'</span>;
+<span style="color: #f472b6;">import</span> { LibUserFormComponent } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'ui-lib'</span>;
 
-        <!-- Right Column: Code Implementation & Wrapper Access Strategy -->
-        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
-          <div>
-            <div class="card-icon" style="margin-bottom: 0.4rem;"><i class="ph ph-code-block"></i> 🧪 Library Wrapper Testing Strategy</div>
+<span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'LibUserFormComponent'</span>, () =&gt; {
+  <span style="color: #38bdf8;">it</span>(<span style="color: #10b981;">'should render, fill input, and emit submitForm event'</span>, <span style="color: #f59e0b;">async</span> () =&gt; {
+    <span style="color: #f472b6;">const</span> submitSpy = <span style="color: #38bdf8;">jest.fn()</span>;
 
-            <div class="glass-card" style="padding: 0.6rem 0.8rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); margin-bottom: 0.6rem; overflow-y: auto; max-height: 310px;">
-              <div style="font-size: 0.7rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.3rem;">lib-user-form-wrapper.component.spec.ts</div>
-              <pre style="margin: 0; font-size: 0.68rem; font-family: monospace; color: var(--text-main); line-height: 1.38;"><span style="color: #f472b6;">import</span> { LibUserFormComponent, LibUserFormData } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'ui-lib'</span>;
-
-<span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'LibUserFormWrapperComponent (Library Integration)'</span>, () =&gt; {
-  <span style="color: #38bdf8;">it</span>(<span style="color: #10b981;">'should access library form elements via test IDs'</span>, <span style="color: #f59e0b;">async</span> () =&gt; {
-    <span style="color: #f472b6;">const</span> { fixture } = <span style="color: #f59e0b;">await</span> <span style="color: #38bdf8;">render</span>(LibUserFormWrapperComponent, {
+    <span style="color: var(--text-muted);">// Render component using Angular Testing Library</span>
+    <span style="color: #f59e0b;">await</span> <span style="color: #38bdf8;">render</span>(LibUserFormComponent, {
+      componentOutputs: { submitForm: { emit: submitSpy } },
       providers: [provideNoopAnimations()]
     });
 
-    <span style="color: var(--text-muted);">// 1. Query library elements using stable data-testid</span>
-    <span style="color: #f472b6;">const</span> nameInput = screen.<span style="color: #38bdf8;">getByTestId</span>(<span style="color: #10b981;">'lib-input-name'</span>);
-    <span style="color: #f472b6;">const</span> submitBtn = screen.<span style="color: #38bdf8;">getByTestId</span>(<span style="color: #10b981;">'lib-submit-btn'</span>);
+    <span style="color: var(--text-muted);">// Query elements by test ID & trigger user events</span>
+    <span style="color: #f472b6;">const</span> input = screen.<span style="color: #38bdf8;">getByTestId</span>(<span style="color: #10b981;">'lib-input-name'</span>);
+    <span style="color: #f472b6;">const</span> button = screen.<span style="color: #38bdf8;">getByTestId</span>(<span style="color: #10b981;">'lib-submit-btn'</span>);
 
-    <span style="color: var(--text-muted);">// 2. Trigger events on library control</span>
-    fireEvent.input(nameInput, { target: { value: <span style="color: #10b981;">'Jane Doe'</span> } });
-    fixture.detectChanges();
+    fireEvent.<span style="color: #34d399;">input</span>(input, { target: { value: <span style="color: #10b981;">'Jane Doe'</span> } });
+    fireEvent.<span style="color: #34d399;">click</span>(button);
 
-    <span style="color: var(--text-muted);">// 3. Verify public @Output emission handling</span>
-    fireEvent.click(submitBtn);
-    <span style="color: #a78bfa;">expect</span>(consoleSpy).<span style="color: #34d399;">toHaveBeenCalledWith</span>(<span style="color: #10b981;">'User submitted:'</span>, mockData);
+    <span style="color: #a78bfa;">expect</span>(submitSpy).<span style="color: #34d399;">toHaveBeenCalledWith</span>({ name: <span style="color: #10b981;">'Jane Doe'</span> });
   });
 });</pre>
             </div>
           </div>
+        </div>
 
-          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 0.5rem 0.75rem;">
-            <div style="font-size: 0.74rem; color: #10b981; font-weight: 700; margin-bottom: 0.15rem;">
-              🎯 Best Practice Checklist for Library Testing
+        <!-- Right Column: Explaining render, screen, fireEvent & all testing utility actions -->
+        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.15rem 1.25rem;">
+          <div>
+            <div class="card-icon" style="margin-bottom: 0.45rem; font-size: 0.85rem;"><i class="ph ph-lightning"></i> ⚡ Angular Testing Library Utilities Breakdown</div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              <!-- render() explanation -->
+              <div style="background: var(--surface-glass); border: 1px solid var(--accent-primary); border-radius: 7px; padding: 0.45rem 0.65rem;">
+                <div style="font-size: 0.74rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.15rem;">
+                  1. <code>render(Component, options)</code>
+                </div>
+                <p style="font-size: 0.68rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+                  Compiles component into test DOM container without <code>TestBed</code> boilerplate. Automatically manages change detection and accepts <code>componentInputs</code>, <code>componentOutputs</code>, & <code>providers</code>.
+                </p>
+              </div>
+
+              <!-- screen explanation -->
+              <div style="background: var(--surface-glass); border: 1px solid var(--accent-secondary); border-radius: 7px; padding: 0.45rem 0.65rem;">
+                <div style="font-size: 0.74rem; font-weight: 700; color: var(--accent-secondary); margin-bottom: 0.15rem;">
+                  2. <code>screen.getByTestId('id')</code> & Queries
+                </div>
+                <p style="font-size: 0.68rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+                  Global object providing DOM queries. Searching by <code>data-testid</code> or accessible roles ensures tests remain decoupled from CSS classes or internal HTML element restructuring.
+                </p>
+              </div>
+
+              <!-- fireEvent explanation -->
+              <div style="background: var(--surface-glass); border: 1px solid #10b981; border-radius: 7px; padding: 0.45rem 0.65rem;">
+                <div style="font-size: 0.74rem; font-weight: 700; color: #10b981; margin-bottom: 0.15rem;">
+                  3. <code>fireEvent.input()</code> & <code>fireEvent.click()</code>
+                </div>
+                <p style="font-size: 0.68rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+                  Dispatches realistic DOM events (typing into controls, clicking buttons) and automatically triggers Angular change detection after event handlers complete.
+                </p>
+              </div>
+
+              <!-- provideNoopAnimations() explanation -->
+              <div style="background: var(--surface-glass); border: 1px solid #a78bfa; border-radius: 7px; padding: 0.45rem 0.65rem;">
+                <div style="font-size: 0.74rem; font-weight: 700; color: #a78bfa; margin-bottom: 0.15rem;">
+                  4. <code>provideNoopAnimations()</code> & Spies
+                </div>
+                <p style="font-size: 0.68rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+                  Disables UI animation delays during test execution. <code>jest.fn()</code> spies track <code>@Output()</code> event emissions without requiring manual EventEmitter subscriptions.
+                </p>
+              </div>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 0.2rem; font-size: 0.68rem; color: var(--text-muted);">
-              <div>✅ <strong>Import from Public API</strong>: Import via library barrel file (<code>ui-lib</code>) instead of deep relative paths.</div>
-              <div>✅ <strong>Use <code>data-testid</code></strong>: Protects tests when library internal markup or Material wrappers change.</div>
-              <div>✅ <strong>Provide Noop Animations</strong>: Include <code>provideNoopAnimations()</code> when testing Material library inputs.</div>
+          </div>
+
+          <div style="margin-top: 0.55rem; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 0.45rem 0.75rem;">
+            <div style="font-size: 0.73rem; color: #10b981; font-weight: 700; margin-bottom: 0.1rem;">
+              🎯 Best Practice Takeaway
             </div>
+            <p style="font-size: 0.68rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+              Import <code>render</code>, <code>screen</code>, and <code>fireEvent</code> directly from <code>@testing-library/angular</code> to write clean, user-centric library unit tests.
+            </p>
           </div>
         </div>
       </div>
     `,
-    notes: "Explain Slide 14: Accessing Angular Library components vs local application components, public contract testing, and data-testid query patterns."
+    notes: "Explain Slide 14: Left side shows library component implementation and testing spec with explicit imports from @testing-library/angular; Right side details render, screen, fireEvent, data-testid, and testing actions."
   },
   {
     id: 15,
