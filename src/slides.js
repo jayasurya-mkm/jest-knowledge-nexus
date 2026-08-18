@@ -1251,14 +1251,15 @@ ng build ui-lib --watch</pre>
     layout: "cards-grid-4",
     content: `
       <div class="cards-grid-2" style="gap: 0.9rem; align-items: stretch;">
-        <!-- Pillar 1: Architecture & Isolation -->
+        <!-- Pillar 1: Architecture & Test Isolation -->
         <div class="glass-card accent-violet" style="padding: 0.9rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-buildings"></i> 🏛️ 1. Architecture & Test Isolation</div>
-            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.80rem; color: var(--text-muted);">
-              <div>🔹 <strong>AAA Pattern (Arrange-Act-Assert):</strong> Standardize test structure across engineering teams for clean readability.</div>
-              <div>🔹 <strong>Isolate External Dependencies:</strong> Always mock HTTP backends, router navigation, and local storage state.</div>
-              <div>🔹 <strong>Test via Public Contract:</strong> Query elements using <code>data-testid</code> attributes instead of brittle CSS/DOM selectors.</div>
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.78rem; color: var(--text-muted);">
+              <div>🎯 <strong>Test Behavior, Not Implementation:</strong> Focus on user expectations instead of testing private methods or internal state.</div>
+              <div>🧪 <strong>Follow AAA Pattern:</strong> Structure specs cleanly as <strong>Arrange &rarr; Act &rarr; Assert</strong>.</div>
+              <div>🎭 <strong>Mock External Dependencies:</strong> Mock HTTP calls, browser APIs, and 3rd-party services to isolate unit tests.</div>
+              <div>🚫 <strong>Avoid Brittle Selectors:</strong> Use accessible queries (<code>getByRole()</code>) or <code>data-testid</code> over CSS selectors.</div>
             </div>
           </div>
           <div style="margin-top: 0.5rem; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.72rem; color: #38bdf8;">
@@ -1269,26 +1270,28 @@ ng build ui-lib --watch</pre>
         <!-- Pillar 2: Performance & Test Speed -->
         <div class="glass-card accent-violet" style="padding: 0.9rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-gauge"></i> ⚡ 2. Speed & Execution Optimization</div>
-            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.80rem; color: var(--text-muted);">
-              <div>🔹 <strong>Parallel Test Workers:</strong> Run Jest in parallel mode (<code>jest --maxWorkers=50%</code>) for lightning-fast CI runs.</div>
-              <div>🔹 <strong>Disable Animations:</strong> Inject <code>provideNoopAnimations()</code> to avoid UI animation delays in specs.</div>
-              <div>🔹 <strong>Lightweight Component Wrappers:</strong> Prefer <code>render()</code> from <code>@testing-library/angular</code> over heavy <code>TestBed</code> setups.</div>
+            <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-gauge"></i> ⚡ 2. Speed & Readable Codebase</div>
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.78rem; color: var(--text-muted);">
+              <div>⚡ <strong>Keep Tests Fast:</strong> Prefer unit tests over real API calls; execute test runners in parallel (<code>--maxWorkers=50%</code>).</div>
+              <div>🔄 <strong>Avoid Test Duplication:</strong> Reuse setup utilities and mock data factories without obscuring spec intent.</div>
+              <div>🔍 <strong>Keep Tests Readable:</strong> Specs should read like self-documenting code without requiring source code inspection.</div>
+              <div>💨 <strong>Disable UI Animations:</strong> Inject <code>provideNoopAnimations()</code> to eliminate artificial timing delays.</div>
             </div>
           </div>
           <div style="margin-top: 0.5rem; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.72rem; color: #10b981;">
-            ⚡ <em>Goal: Keep total unit test suite runtime under 30 seconds across the enterprise repository.</em>
+            ⚡ <em>Goal: Keep total unit test suite execution under 30 seconds across the enterprise repository.</em>
           </div>
         </div>
 
-        <!-- Pillar 3: Test Hygiene & Maintenance -->
+        <!-- Pillar 3: Test Hygiene & Error Cases -->
         <div class="glass-card accent-violet" style="padding: 0.9rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-broom"></i> 🧹 3. Test Hygiene & State Cleanup</div>
-            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.80rem; color: var(--text-muted);">
-              <div>🔹 <strong>Strict Cleanup Lifecycle:</strong> Execute <code>jest.clearAllMocks()</code> and <code>httpMock.verify()</code> in <code>afterEach()</code>.</div>
-              <div>🔹 <strong>Idempotent Test Runs:</strong> Ensure each test runs independently without relying on execution order or shared state.</div>
-              <div>🔹 <strong>Behavioral Test Descriptions:</strong> Use clear specs: <code>it('should emit submitForm when form is valid')</code>.</div>
+            <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-broom"></i> 🧹 3. Test Hygiene & Robustness</div>
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.78rem; color: var(--text-muted);">
+              <div>🧩 <strong>Keep Tests Independent:</strong> Ensure specs are idempotent and run isolated without relying on shared state.</div>
+              <div>🛡️ <strong>Test Error & Edge Cases:</strong> Validate empty states, validation errors, HTTP failures, and boundary conditions.</div>
+              <div>📝 <strong>Write Meaningful Test Names:</strong> Describe expected behaviors clearly: <code>it('should display error on invalid input')</code>.</div>
+              <div>🧹 <strong>Strict Cleanup:</strong> Execute <code>jest.clearAllMocks()</code> and <code>httpMock.verify()</code> in <code>afterEach()</code>.</div>
             </div>
           </div>
           <div style="margin-top: 0.5rem; background: rgba(167, 139, 250, 0.08); border: 1px solid rgba(167, 139, 250, 0.25); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.72rem; color: #a78bfa;">
@@ -1296,14 +1299,15 @@ ng build ui-lib --watch</pre>
           </div>
         </div>
 
-        <!-- Pillar 4: CI/CD & Automated Quality Gates -->
+        <!-- Pillar 4: CI/CD & Metrics -->
         <div class="glass-card accent-violet" style="padding: 0.9rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-git-merge"></i> 🚀 4. CI/CD & Automated Quality Gates</div>
-            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.80rem; color: var(--text-muted);">
-              <div>🔹 <strong>Automated Coverage Gates:</strong> Enforce 80%+ branch coverage in GitHub Actions before code merge.</div>
-              <div>🔹 <strong>Fail-Fast Pipeline:</strong> Execute TypeScript compilation & unit tests before running slower E2E suites.</div>
-              <div>🔹 <strong>Mock Data Factory:</strong> Standardize mock data generators (e.g., <code>createMockUser()</code>) across all spec files.</div>
+            <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-git-merge"></i> 🚀 4. CI/CD Integration & Coverage</div>
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.78rem; color: var(--text-muted);">
+              <div>🚀 <strong>Integrate with CI/CD:</strong> Trigger automated tests on every Pull Request to catch regressions early.</div>
+              <div>📊 <strong>Use Coverage as a Guide:</strong> Track statement and branch metrics to spot untested paths without chasing 100%.</div>
+              <div>🔒 <strong>Enforce Quality Gates:</strong> Set automated PR build gates in GitHub Actions to block breaking commits.</div>
+              <div>⚡ <strong>Fail-Fast Pipeline:</strong> Run TypeScript compilation & unit specs before launching E2E test suites.</div>
             </div>
           </div>
           <div style="margin-top: 0.5rem; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.72rem; color: #f59e0b;">
@@ -1312,7 +1316,7 @@ ng build ui-lib --watch</pre>
         </div>
       </div>
     `,
-    notes: "Explain Slide 16: Enterprise Testing Best Practices across 4 key pillars: Architecture & Isolation, Speed & Optimization, Test Hygiene & State Cleanup, and CI/CD Quality Gates."
+    notes: "Explain Slide 16: Enterprise Testing Best Practices incorporating the 12 core principles across Architecture, Performance, Hygiene, and CI/CD."
   },
   {
     id: 17,
