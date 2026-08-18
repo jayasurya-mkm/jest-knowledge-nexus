@@ -765,7 +765,7 @@ module.exports = {
             <div class="card-icon" style="margin-bottom: 0.4rem;"><i class="ph ph-wrench"></i> 🛠️ UserService Implementation</div>
             <div class="glass-card" style="padding: 0.75rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-primary); overflow-y: auto; max-height: 380px;">
               <div style="font-size: 0.7rem; color: var(--accent-primary); font-weight: 700; margin-bottom: 0.3rem;">user.service.ts</div>
-              <pre style="margin: 0; font-size: 0.67rem; font-family: monospace; color: var(--text-main); line-height: 1.38;"><span style="color: #38bdf8;">@Injectable</span>({ providedIn: <span style="color: #10b981;">'root'</span> })
+              <pre style="margin: 0; font-size: 0.75rem; font-family: monospace; color: var(--text-main); line-height: 1.38;"><span style="color: #38bdf8;">@Injectable</span>({ providedIn: <span style="color: #10b981;">'root'</span> })
 <span style="color: #f472b6;">export class</span> <span style="color: #38bdf8;">UserService</span> {
   <span style="color: #f472b6;">private</span> http = <span style="color: #38bdf8;">inject</span>(HttpClient);
   <span style="color: #f472b6;">private</span> apiUrl = <span style="color: #10b981;">'https://jsonplaceholder.typicode.com/users'</span>;
@@ -853,7 +853,7 @@ module.exports = {
 
             <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 0.45rem 0.75rem;">
               <div style="font-size: 0.72rem; color: #10b981; font-weight: 700; margin-bottom: 0.1rem;">⚡ Live API Integration Key Points</div>
-              <p style="font-size: 0.67rem; color: var(--text-muted); margin: 0; line-height: 1.3;">
+              <p style="font-size: 0.75rem; color: var(--text-muted); margin: 0; line-height: 1.3;">
                 Uses <code>provideHttpClient()</code> to trigger actual network requests against live JSONPlaceholder endpoints. Uses <code>firstValueFrom()</code> for clean <code>async/await</code> testing.
               </p>
             </div>
@@ -911,7 +911,7 @@ module.exports = {
             <!-- Section 2: Why Avoid Real HTTP Calls in Unit Tests? -->
             <div style="background: rgba(248, 113, 113, 0.08); border: 1px solid rgba(248, 113, 113, 0.25); border-radius: 8px; padding: 0.5rem 0.7rem; margin-bottom: 0.75rem;">
               <div style="font-size: 0.73rem; color: #f87171; font-weight: 700; margin-bottom: 0.25rem;">⚠️ Why Avoid Real HTTP Calls in Unit Tests?</div>
-              <div style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.67rem; color: var(--text-muted);">
+              <div style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.75rem; color: var(--text-muted);">
                 <div>🐢 <strong>Slower</strong> — Network latency & backend processing delay test suite execution.</div>
                 <div>🌐 <strong>Environment-dependent</strong> — Tests fail if backend server goes down or lacks connectivity.</div>
                 <div>🔄 <strong>Less deterministic</strong> — Remote API state mutation or data changes break tests.</div>
@@ -1255,7 +1255,7 @@ ng build ui-lib --watch</pre>
         <div class="glass-card accent-violet" style="padding: 0.9rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-buildings"></i> 🏛️ 1. Architecture & Test Isolation</div>
-            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.74rem; color: var(--text-muted);">
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.80rem; color: var(--text-muted);">
               <div>🔹 <strong>AAA Pattern (Arrange-Act-Assert):</strong> Standardize test structure across engineering teams for clean readability.</div>
               <div>🔹 <strong>Isolate External Dependencies:</strong> Always mock HTTP backends, router navigation, and local storage state.</div>
               <div>🔹 <strong>Test via Public Contract:</strong> Query elements using <code>data-testid</code> attributes instead of brittle CSS/DOM selectors.</div>
@@ -1270,7 +1270,7 @@ ng build ui-lib --watch</pre>
         <div class="glass-card accent-violet" style="padding: 0.9rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-gauge"></i> ⚡ 2. Speed & Execution Optimization</div>
-            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.74rem; color: var(--text-muted);">
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.80rem; color: var(--text-muted);">
               <div>🔹 <strong>Parallel Test Workers:</strong> Run Jest in parallel mode (<code>jest --maxWorkers=50%</code>) for lightning-fast CI runs.</div>
               <div>🔹 <strong>Disable Animations:</strong> Inject <code>provideNoopAnimations()</code> to avoid UI animation delays in specs.</div>
               <div>🔹 <strong>Lightweight Component Wrappers:</strong> Prefer <code>render()</code> from <code>@testing-library/angular</code> over heavy <code>TestBed</code> setups.</div>
@@ -1285,7 +1285,7 @@ ng build ui-lib --watch</pre>
         <div class="glass-card accent-violet" style="padding: 0.9rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-broom"></i> 🧹 3. Test Hygiene & State Cleanup</div>
-            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.74rem; color: var(--text-muted);">
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.80rem; color: var(--text-muted);">
               <div>🔹 <strong>Strict Cleanup Lifecycle:</strong> Execute <code>jest.clearAllMocks()</code> and <code>httpMock.verify()</code> in <code>afterEach()</code>.</div>
               <div>🔹 <strong>Idempotent Test Runs:</strong> Ensure each test runs independently without relying on execution order or shared state.</div>
               <div>🔹 <strong>Behavioral Test Descriptions:</strong> Use clear specs: <code>it('should emit submitForm when form is valid')</code>.</div>
@@ -1300,7 +1300,7 @@ ng build ui-lib --watch</pre>
         <div class="glass-card accent-violet" style="padding: 0.9rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div class="card-icon" style="margin-bottom: 0.35rem; font-size: 0.85rem;"><i class="ph ph-git-merge"></i> 🚀 4. CI/CD & Automated Quality Gates</div>
-            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.74rem; color: var(--text-muted);">
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.80rem; color: var(--text-muted);">
               <div>🔹 <strong>Automated Coverage Gates:</strong> Enforce 80%+ branch coverage in GitHub Actions before code merge.</div>
               <div>🔹 <strong>Fail-Fast Pipeline:</strong> Execute TypeScript compilation & unit tests before running slower E2E suites.</div>
               <div>🔹 <strong>Mock Data Factory:</strong> Standardize mock data generators (e.g., <code>createMockUser()</code>) across all spec files.</div>
