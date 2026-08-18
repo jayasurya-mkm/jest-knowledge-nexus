@@ -1163,31 +1163,85 @@ ng build ui-lib --watch</pre>
   },
   {
     id: 15,
-    badge: "QUALITY ASSURANCE",
-    title: "Testing Strategy & Automated QA",
-    subtitle: "High-Confidence Testing with Jest & Angular Testing Library",
-    layout: "split-grid",
+    badge: "CODE COVERAGE & METRICS",
+    title: "Code Coverage Guidelines",
+    subtitle: "Understanding Metrics, Threshold Enforcement, Do's and Don'ts for High-Confidence Testing",
+    layout: "vertical-rows",
     content: `
-      <div class="cards-grid-2">
-        <div class="glass-card">
-          <h3>Unit & Component Testing</h3>
-          <ul class="styled-list">
-            <li><strong>Jest Runner:</strong> Fast parallel test execution replacing Karma/Jasmine.</li>
-            <li><strong>Angular Testing Library:</strong> User-centric testing focusing on DOM interactions over implementation details.</li>
-            <li><strong>Signal Mocking:</strong> Direct evaluation of <code>signal</code> state transitions and computed dependencies.</li>
-          </ul>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <!-- Row 1: What is Code Coverage & Core Metrics + Jest Config -->
+        <div class="glass-card accent-violet" style="padding: 0.85rem 1.2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <div class="card-icon" style="font-size: 0.82rem;"><i class="ph ph-chart-pie"></i> 📊 What is Code Coverage & Core Metrics</div>
+            <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.15rem 0.5rem; border-radius: 6px; font-size: 0.68rem; font-family: monospace;">jest --coverage</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1.3fr; gap: 0.55rem; align-items: center;">
+            <div style="background: var(--surface-glass); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; padding: 0.4rem 0.55rem; text-align: center;">
+              <div style="font-size: 0.65rem; color: #38bdf8; font-weight: 700;">Statements</div>
+              <div style="font-size: 0.64rem; color: var(--text-muted);">Executed code statements</div>
+            </div>
+            <div style="background: var(--surface-glass); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 6px; padding: 0.4rem 0.55rem; text-align: center;">
+              <div style="font-size: 0.65rem; color: #a78bfa; font-weight: 700;">Branches</div>
+              <div style="font-size: 0.64rem; color: var(--text-muted);">if/else & ternary paths</div>
+            </div>
+            <div style="background: var(--surface-glass); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 6px; padding: 0.4rem 0.55rem; text-align: center;">
+              <div style="font-size: 0.65rem; color: #10b981; font-weight: 700;">Functions</div>
+              <div style="font-size: 0.64rem; color: var(--text-muted);">Methods & handlers invoked</div>
+            </div>
+            <div style="background: var(--surface-glass); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 6px; padding: 0.4rem 0.55rem; text-align: center;">
+              <div style="font-size: 0.65rem; color: #f59e0b; font-weight: 700;">Lines</div>
+              <div style="font-size: 0.64rem; color: var(--text-muted);">Physical lines executed</div>
+            </div>
+            <div style="background: black; border: 1px solid var(--surface-border); border-radius: 6px; padding: 0.35rem 0.55rem;">
+              <div style="font-size: 0.62rem; color: #38bdf8; font-weight: 700; margin-bottom: 0.15rem;">jest.config.js Threshold</div>
+              <pre style="margin: 0; font-size: 0.58rem; font-family: monospace; color: #10b981; line-height: 1.25;">coverageThreshold: {
+  global: { statements: 80, branches: 85 }
+}</pre>
+            </div>
+          </div>
         </div>
-        <div class="glass-card">
-          <h3>Integration & E2E Validation</h3>
-          <ul class="styled-list">
-            <li><strong>NestJS Supertest:</strong> Full HTTP pipeline integration tests validating endpoint controllers and DTO validations.</li>
-            <li><strong>Global Node Polyfills:</strong> Standardized test env setup for Fetch API, TextEncoder/Decoder, and crypto.</li>
-            <li><strong>85%+ Coverage Threshold:</strong> Enforced CI build gate blocking regression commits.</li>
-          </ul>
+
+        <!-- Row 2: What You HAVE TO DO (Do's) -->
+        <div class="glass-card" style="padding: 0.85rem 1.2rem; border-left: 4px solid #10b981; background: rgba(16, 185, 129, 0.04);">
+          <div class="card-icon" style="margin-bottom: 0.35rem; color: #10b981; font-size: 0.82rem;"><i class="ph ph-check-circle"></i> ✅ WHAT YOU HAVE TO DO (Best Practices)</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; font-size: 0.69rem; color: var(--text-muted);">
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2);">
+              <strong style="color: var(--text-main);">🎯 Cover Critical Business & Edge Cases:</strong> Focus tests on complex state transitions, form validators, signal computeds, and HTTP error branches.
+            </div>
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2);">
+              <strong style="color: var(--text-main);">🛡️ Enforce CI Build Gates:</strong> Automatically block PRs in GitHub Actions if total coverage drops below threshold (e.g. 85% branch coverage).
+            </div>
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2);">
+              <strong style="color: var(--text-main);">🧹 Exclude Non-Logic Artifacts:</strong> Ignore barrel files (<code>public-api.ts</code>), index exports, and environment configs via <code>coveragePathIgnorePatterns</code>.
+            </div>
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2);">
+              <strong style="color: var(--text-main);">🧪 Test User Interactions & DOM:</strong> Verify actual rendered output and user events using Angular Testing Library rather than testing private internal methods.
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3: What You DON'T DO (Don'ts) -->
+        <div class="glass-card" style="padding: 0.85rem 1.2rem; border-left: 4px solid #ef4444; background: rgba(239, 68, 68, 0.04);">
+          <div class="card-icon" style="margin-bottom: 0.35rem; color: #ef4444; font-size: 0.82rem;"><i class="ph ph-x-circle"></i> ❌ WHAT YOU DON'T DO (Pitfalls to Avoid)</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; font-size: 0.69rem; color: var(--text-muted);">
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
+              <strong style="color: var(--text-main);">🚫 Don't Chase 100% Blindly:</strong> 100% coverage does NOT guarantee zero bugs. Chasing 100% leads to fragile, low-value tests that break on minor refactors.
+            </div>
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
+              <strong style="color: var(--text-main);">👻 Don't Write Assertless "Ghost" Tests:</strong> Invoking functions without <code>expect()</code> assertions just to pad coverage numbers gives false security without validating behavior.
+            </div>
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
+              <strong style="color: var(--text-main);">🚫 Don't Test Framework / Material Internals:</strong> Avoid testing Angular core framework logic or Material library internal DOM elements.
+            </div>
+            <div style="background: var(--surface-glass); padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
+              <strong style="color: var(--text-main);">⚠️ Don't Ignore Branch Coverage:</strong> Statement coverage alone can hide unhandled <code>else</code> or <code>catch</code> blocks. Always prioritize branch coverage.
+            </div>
+          </div>
         </div>
       </div>
     `,
-    notes: "Reference our unit testing work with Jest and Angular Testing Library setup in the codebase."
+    notes: "Explain Slide 15: Code Coverage concept, core metrics (Statements, Branches, Functions, Lines), Jest threshold enforcement, and explicit Do's and Don'ts for high-quality testing."
   },
   {
     id: 16,
