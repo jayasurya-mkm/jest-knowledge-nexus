@@ -936,33 +936,189 @@ module.exports = {
   },
   {
     id: 13,
-    badge: "UI/UX DESIGN SYSTEM",
-    title: "Modern Glassmorphism Design System",
-    subtitle: "Vibrant Aesthetics, Accessibility & Seamless Responsiveness",
-    layout: "card-trio",
+    badge: "ANGULAR LIBRARY CREATION",
+    title: "Creating an Angular Library",
+    subtitle: "Understanding Angular Libraries, Creation Steps, and Build Workflow",
+    layout: "split-grid",
     content: `
-      <div class="cards-grid-3">
-        <div class="glass-card">
-          <div class="design-preview preview-colors"></div>
-          <h4>Harmonious Color Palette</h4>
-          <p>Custom HSL color tokens featuring deep void darks, vibrant electric violet accents, and glowing cyan status badges.</p>
+      <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
+        <!-- Left Column: What is an Angular Library & Creation Steps -->
+        <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
+          <div>
+            <div class="card-icon" style="margin-bottom: 0.45rem;"><i class="ph ph-package"></i> 📦 What is an Angular Library?</div>
+            <p style="font-size: 0.81rem; color: var(--text-muted); margin-bottom: 0.65rem; line-height: 1.45;">
+              An <strong>Angular Library</strong> is a reusable, standalone Angular project containing components, services, directives, or utilities that can be shared across multiple applications or published to an npm registry.
+            </p>
+
+            <div style="background: var(--surface-glass); border: 1px solid var(--accent-primary); border-radius: 8px; padding: 0.6rem 0.8rem; margin-bottom: 0.75rem;">
+              <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.35rem;">🛠️ How to Create an Angular Library</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.4;">
+                Run the Angular CLI library generator inside your workspace:
+              </div>
+              <pre style="margin: 0.35rem 0 0 0; padding: 0.45rem 0.65rem; background: rgba(0,0,0,0.3); border-radius: 6px; font-size: 0.72rem; font-family: monospace; color: #38bdf8;">ng generate library ui-lib
+<span style="color: var(--text-muted);"># or using the short alias:</span>
+ng g lib ui-lib</pre>
+            </div>
+
+            <div style="background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: 8px; padding: 0.55rem 0.75rem;">
+              <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">📂 Key Workspace Files Created</div>
+              <div style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.7rem; color: var(--text-muted);">
+                <div>📁 <code>projects/ui-lib/</code> — Dedicated library source directory</div>
+                <div>📄 <code>src/public-api.ts</code> — Barrel export defining public API surface</div>
+                <div>⚙️ <code>ng-package.json</code> — Configuration for <code>ng-packagr</code> build tool</div>
+                <div>🔗 <code>tsconfig.json</code> — Auto-adds path mapping: <code>"ui-lib": ["dist/ui-lib"]</code></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 0.6rem; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 0.45rem 0.75rem;">
+            <div style="font-size: 0.73rem; color: #38bdf8; font-weight: 700; margin-bottom: 0.1rem;">💡 Modular Architecture Benefit</div>
+            <p style="font-size: 0.68rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+              Decouples shared UI design components and reusable state logic from the main application, enabling team scale and independent versioning.
+            </p>
+          </div>
         </div>
-        <div class="glass-card">
-          <div class="design-preview preview-typography">Aa</div>
-          <h4>Modern Typography</h4>
-          <p>Clean geometric typography using Google Outfit & Plus Jakarta Sans for crisp readability across mobile and 4K displays.</p>
-        </div>
-        <div class="glass-card">
-          <div class="design-preview preview-glass">✨</div>
-          <h4>Micro-Animations & Glass</h4>
-          <p>Backdrop-blur glassmorphism combined with hardware-accelerated CSS keyframe transitions for smooth tactile feedback.</p>
+
+        <!-- Right Column: Build Commands & Consumption -->
+        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
+          <div>
+            <div class="card-icon" style="margin-bottom: 0.45rem;"><i class="ph ph-terminal-window"></i> ⚡ Build Commands & Workflow</div>
+
+            <div class="glass-card" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); margin-bottom: 0.75rem;">
+              <div style="font-size: 0.72rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.3rem;">1. Build Command</div>
+              <pre style="margin: 0; padding: 0.4rem 0.6rem; background: rgba(0,0,0,0.3); border-radius: 6px; font-size: 0.71rem; font-family: monospace; color: #10b981;"><span style="color: var(--text-muted);"># Build library into dist/ui-lib</span>
+ng build ui-lib
+
+<span style="color: var(--text-muted);"># Watch mode for continuous development</span>
+ng build ui-lib --watch</pre>
+            </div>
+
+            <div class="glass-card" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid #a78bfa; margin-bottom: 0.75rem;">
+              <div style="font-size: 0.72rem; color: #a78bfa; font-weight: 700; margin-bottom: 0.3rem;">2. Add Scripts to package.json</div>
+              <pre style="margin: 0; font-size: 0.7rem; font-family: monospace; color: var(--text-main); line-height: 1.35;">"scripts": {
+  "<span style="color: #38bdf8;">build:lib</span>": "ng build ui-lib",
+  "<span style="color: #38bdf8;">watch:lib</span>": "ng build ui-lib --watch",
+  "<span style="color: #38bdf8;">build</span>": "npm run build:lib && ng build"
+}</pre>
+            </div>
+
+            <div class="glass-card" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid #10b981;">
+              <div style="font-size: 0.72rem; color: #10b981; font-weight: 700; margin-bottom: 0.3rem;">3. Consuming Library Components in App</div>
+              <pre style="margin: 0; font-size: 0.7rem; font-family: monospace; color: var(--text-main); line-height: 1.35;"><span style="color: var(--text-muted); font-style: italic;">// Import directly from the built library package</span>
+<span style="color: #f472b6;">import</span> { LibUserFormComponent } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'ui-lib'</span>;
+
+<span style="color: #38bdf8;">@Component</span>({
+  imports: [LibUserFormComponent], ...
+})</pre>
+            </div>
+          </div>
+
+          <div style="margin-top: 0.6rem; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 0.5rem 0.75rem;">
+            <div style="font-size: 0.74rem; color: #10b981; font-weight: 700; margin-bottom: 0.15rem;">
+              🎯 Key Library Best Practice
+            </div>
+            <p style="font-size: 0.69rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+              Always export components, directives, and models in <code>public-api.ts</code>. Build the library before building or serving the consuming application.
+            </p>
+          </div>
         </div>
       </div>
     `,
-    notes: "Discuss our Design System: custom CSS variables, glassmorphism backdrop blurs, typography, and accessibility."
+    notes: "Explain Slide 13: What an Angular library is, Angular CLI generation commands, project structure, ng-packagr build commands, and package.json build scripts."
   },
   {
     id: 14,
+    badge: "LIBRARY TESTING ARCHITECTURE",
+    title: "Testing Angular Library Components",
+    subtitle: "How accessing library elements differs from standard application components and wrapper integration",
+    layout: "split-grid",
+    content: `
+      <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
+        <!-- Left Column: Normal vs Library Component Access Comparison -->
+        <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
+          <div>
+            <div class="card-icon" style="margin-bottom: 0.4rem;"><i class="ph ph-package"></i> 📦 Accessing Normal vs Library Components</div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">
+              Testing shared Angular UI libraries (<code style="color: var(--accent-primary);">ui-lib</code>) requires a different access pattern than local app components.
+            </p>
+
+            <div class="table-responsive" style="overflow-y: auto; max-height: 290px; border-radius: 8px; border: 1px solid var(--surface-border); margin-bottom: 0.6rem;">
+              <table class="styled-comparison-table" style="width: 100%; border-collapse: collapse; font-size: 0.78rem;">
+                <thead style="position: sticky; top: 0; background: rgba(18, 20, 32, 0.95); z-index: 5;">
+                  <tr style="border-bottom: 1px solid var(--surface-border);">
+                    <th style="padding: 0.4rem 0.6rem; text-align: left; color: #f472b6; width: 45%;">Local App Component</th>
+                    <th style="padding: 0.4rem 0.6rem; text-align: left; color: #38bdf8; width: 55%;">Library Component (ui-lib)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--surface-border);"><td style="padding: 0.35rem 0.6rem;"><code>import from './user-form'</code></td><td style="padding: 0.35rem 0.6rem; color: #38bdf8;"><code>import { LibUserFormComponent } from 'ui-lib'</code></td></tr>
+                  <tr style="border-bottom: 1px solid var(--surface-border); background: rgba(255,255,255,0.02);"><td style="padding: 0.35rem 0.6rem;">Relative local path access</td><td style="padding: 0.35rem 0.6rem; color: #38bdf8;">Imported via public package API / secondary entrypoint</td></tr>
+                  <tr style="border-bottom: 1px solid var(--surface-border);"><td style="padding: 0.35rem 0.6rem;">Direct class property inspection</td><td style="padding: 0.35rem 0.6rem; color: #38bdf8;">Public <code>@Input()</code> & <code>@Output()</code> contract testing</td></tr>
+                  <tr style="border-bottom: 1px solid var(--surface-border); background: rgba(255,255,255,0.02);"><td style="padding: 0.35rem 0.6rem;">Internal CSS selectors</td><td style="padding: 0.35rem 0.6rem; color: #38bdf8;">Decoupled <code>data-testid</code> attributes</td></tr>
+                  <tr><td style="padding: 0.35rem 0.6rem;">Local TestBed compilation</td><td style="padding: 0.35rem 0.6rem; color: #38bdf8;">Pre-compiled distribution artifact / isolated spec</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div style="background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 8px; padding: 0.5rem 0.75rem;">
+            <div style="font-size: 0.75rem; color: #a78bfa; font-weight: 700; margin-bottom: 0.15rem;">
+              🔑 Why Library Access Differs
+            </div>
+            <p style="font-size: 0.71rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+              Library components are published or built into <code style="color: var(--accent-secondary);">dist/ui-lib</code>. Consumers test the <strong>public contract</strong> and rendered DOM via wrapper components rather than private internal implementation details.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column: Code Implementation & Wrapper Access Strategy -->
+        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
+          <div>
+            <div class="card-icon" style="margin-bottom: 0.4rem;"><i class="ph ph-code-block"></i> 🧪 Library Wrapper Testing Strategy</div>
+
+            <div class="glass-card" style="padding: 0.6rem 0.8rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); margin-bottom: 0.6rem; overflow-y: auto; max-height: 310px;">
+              <div style="font-size: 0.7rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.3rem;">lib-user-form-wrapper.component.spec.ts</div>
+              <pre style="margin: 0; font-size: 0.68rem; font-family: monospace; color: var(--text-main); line-height: 1.38;"><span style="color: #f472b6;">import</span> { LibUserFormComponent, LibUserFormData } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'ui-lib'</span>;
+
+<span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'LibUserFormWrapperComponent (Library Integration)'</span>, () =&gt; {
+  <span style="color: #38bdf8;">it</span>(<span style="color: #10b981;">'should access library form elements via test IDs'</span>, <span style="color: #f59e0b;">async</span> () =&gt; {
+    <span style="color: #f472b6;">const</span> { fixture } = <span style="color: #f59e0b;">await</span> <span style="color: #38bdf8;">render</span>(LibUserFormWrapperComponent, {
+      providers: [provideNoopAnimations()]
+    });
+
+    <span style="color: var(--text-muted);">// 1. Query library elements using stable data-testid</span>
+    <span style="color: #f472b6;">const</span> nameInput = screen.<span style="color: #38bdf8;">getByTestId</span>(<span style="color: #10b981;">'lib-input-name'</span>);
+    <span style="color: #f472b6;">const</span> submitBtn = screen.<span style="color: #38bdf8;">getByTestId</span>(<span style="color: #10b981;">'lib-submit-btn'</span>);
+
+    <span style="color: var(--text-muted);">// 2. Trigger events on library control</span>
+    fireEvent.input(nameInput, { target: { value: <span style="color: #10b981;">'Jane Doe'</span> } });
+    fixture.detectChanges();
+
+    <span style="color: var(--text-muted);">// 3. Verify public @Output emission handling</span>
+    fireEvent.click(submitBtn);
+    <span style="color: #a78bfa;">expect</span>(consoleSpy).<span style="color: #34d399;">toHaveBeenCalledWith</span>(<span style="color: #10b981;">'User submitted:'</span>, mockData);
+  });
+});</pre>
+            </div>
+          </div>
+
+          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 0.5rem 0.75rem;">
+            <div style="font-size: 0.74rem; color: #10b981; font-weight: 700; margin-bottom: 0.15rem;">
+              🎯 Best Practice Checklist for Library Testing
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.2rem; font-size: 0.68rem; color: var(--text-muted);">
+              <div>✅ <strong>Import from Public API</strong>: Import via library barrel file (<code>ui-lib</code>) instead of deep relative paths.</div>
+              <div>✅ <strong>Use <code>data-testid</code></strong>: Protects tests when library internal markup or Material wrappers change.</div>
+              <div>✅ <strong>Provide Noop Animations</strong>: Include <code>provideNoopAnimations()</code> when testing Material library inputs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    notes: "Explain Slide 14: Accessing Angular Library components vs local application components, public contract testing, and data-testid query patterns."
+  },
+  {
+    id: 15,
     badge: "QUALITY ASSURANCE",
     title: "Testing Strategy & Automated QA",
     subtitle: "High-Confidence Testing with Jest & Angular Testing Library",
@@ -990,7 +1146,7 @@ module.exports = {
     notes: "Reference our unit testing work with Jest and Angular Testing Library setup in the codebase."
   },
   {
-    id: 15,
+    id: 16,
     badge: "PERFORMANCE",
     title: "Performance Engineering & Speed Optimization",
     subtitle: "Achieving Sub-100ms Page Loads & High Frame Rates",
@@ -1018,7 +1174,7 @@ module.exports = {
     notes: "Highlight performance metrics: Lighthouse score 98, fast API turnaround, 60fps animations."
   },
   {
-    id: 16,
+    id: 17,
     badge: "CYBERSECURITY",
     title: "Security Hardening & Best Practices",
     subtitle: "Multi-Layered Security Architecture Safeguarding Customer Data",
@@ -1042,7 +1198,7 @@ module.exports = {
     notes: "Review security protections built into NestJS middleware and Angular HTTP sanitizers."
   },
   {
-    id: 17,
+    id: 18,
     badge: "DEVOPS & DEPLOYMENT",
     title: "Containerization & CI/CD Pipeline",
     subtitle: "Automated Build, Test, and Cloud Deployment Workflows",
@@ -1077,7 +1233,7 @@ module.exports = {
     notes: "Describe DevOps automation: Docker multi-stage builds and CI/CD pipelines."
   },
   {
-    id: 18,
+    id: 19,
     badge: "KPIs & BENCHMARKS",
     title: "Operational KPIs & System Benchmarks",
     subtitle: "Measuring Success Across Infrastructure and Business Operations",
@@ -1105,7 +1261,7 @@ module.exports = {
     notes: "Review key performance indicators and business benefits of the platform."
   },
   {
-    id: 19,
+    id: 20,
     badge: "FUTURE ROADMAP",
     title: "Future Enhancements & Scaling Strategy",
     subtitle: "Extending QuickShop with AI Capabilities & Mobile Ecosystem",
@@ -1132,7 +1288,7 @@ module.exports = {
     notes: "Outline future phases: AI recommendations, mobile companion apps, and microservice messaging."
   },
   {
-    id: 20,
+    id: 21,
     badge: "CONCLUSION",
     title: "Summary & Open Q&A",
     subtitle: "QuickShop: Built for Today, Ready for Tomorrow",
@@ -1145,7 +1301,7 @@ module.exports = {
         <div class="contact-card-box glass-card">
           <div class="contact-item">⚡ <strong>Project:</strong> QuickShop Enterprise E-Commerce Platform</div>
           <div class="contact-item">💻 <strong>Tech Stack:</strong> Angular 18 Signals + NestJS + TypeScript</div>
-          <div class="contact-item">📄 <strong>Total Slides:</strong> 20 / 20 Completed</div>
+          <div class="contact-item">📄 <strong>Total Slides:</strong> 21 / 21 Completed</div>
         </div>
       </div>
     `,
