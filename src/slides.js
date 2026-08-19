@@ -18,40 +18,109 @@ export const slidesData = [
   },
   {
     id: 2,
-    badge: " ",
+    badge: "FRAMEWORK OVERVIEW",
     title: "What is Jest ?",
     subtitle: "Jest is a JavaScript testing framework designed for simplicity, speed, and minimal configuration.",
     layout: "split-grid",
     content: `
-      <div class="cards-grid-2">
-        <div class="glass-card accent-violet">
-          <div class="card-icon"><i class="ph ph-lightning"></i> 🚀 Framework Essence</div>
-          <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.25rem; color: var(--text-main);">
-            Jest is a modern JavaScript testing framework engineered for high speed, minimal configuration, and a delightful developer workflow.
-          </p>
-          <div class="tag-group">
+      <div class="cards-grid-2" style="gap: 1.25rem; align-items: stretch;">
+        <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.35rem 1.5rem;">
+          <div>
+            <div class="card-icon" style="margin-bottom: 0.6rem;"><i class="ph ph-lightning"></i> 🚀 Framework Essence</div>
+            <p style="font-size: 0.95rem; line-height: 1.55; color: var(--text-main); margin-bottom: 1rem;">
+              Jest is a modern, battery-included JavaScript testing framework engineered by Meta for ultra-fast execution, zero configuration overhead, and an intuitive developer experience.
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1rem;">
+              <div style="background: rgba(139, 92, 246, 0.12); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 10px; padding: 0.65rem 0.8rem;">
+                <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.35rem;">
+                  ⚡ Parallel Workers
+                </div>
+                <p style="font-size: 0.74rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+                  Executes test suites concurrently across worker threads for maximum speed.
+                </p>
+              </div>
+
+              <div style="background: rgba(6, 182, 212, 0.12); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 10px; padding: 0.65rem 0.8rem;">
+                <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-secondary); margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.35rem;">
+                  🛡️ Zero Configuration
+                </div>
+                <p style="font-size: 0.74rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+                  Out-of-the-box runner, assertions, mocks, and code coverage tools.
+                </p>
+              </div>
+
+              <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 10px; padding: 0.65rem 0.8rem;">
+                <div style="font-size: 0.8rem; font-weight: 700; color: #10b981; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.35rem;">
+                  🔬 Isolated Sandboxes
+                </div>
+                <p style="font-size: 0.74rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+                  Every spec file runs in an isolated environment (<code>jsdom</code> / Node) avoiding state leaks.
+                </p>
+              </div>
+
+              <div style="background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 10px; padding: 0.65rem 0.8rem;">
+                <div style="font-size: 0.8rem; font-weight: 700; color: #f59e0b; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.35rem;">
+                  🧠 Smart Watch Mode
+                </div>
+                <p style="font-size: 0.74rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+                  Uses Git diffs to selectively run only the tests affected by recent code changes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tag-group" style="margin-top: 0.5rem;">
             <span class="tag">Meta / Facebook</span>
             <span class="tag">Zero Config</span>
-            <span class="tag">TypeScript</span>
+            <span class="tag">Parallel Execution</span>
+            <span class="tag">Built-in Mocks</span>
+            <span class="tag">TypeScript Native</span>
             <span class="tag">Code Coverage</span>
           </div>
         </div>
-        <div class="glass-card">
-          <div class="card-icon"><i class="ph ph-check-circle"></i> ⚡ Key Highlights</div>
-          <ul class="styled-list">
-            <li><strong>Meta & Open Source:</strong> Originally created by Facebook (Meta) and maintained as a premier open-source project.</li>
-            <li><strong>Framework Agnostic:</strong> Works seamlessly with JavaScript and TypeScript applications across different libraries.</li>
-            <li><strong>Zero Configuration:</strong> Provides an out-of-the-box approach for common testing scenarios.</li>
-            <li><strong>All-in-One Features:</strong> Built-in test runner, assertion utilities, mocking mechanisms, and code coverage tools.</li>
-            <li><strong>Widespread Adoption:</strong> Widely used across React, Angular, Node.js, Vue, and enterprise ecosystems.</li>
-          </ul>
+
+        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.35rem 1.5rem;">
+          <div>
+            <div class="card-icon" style="margin-bottom: 0.6rem;"><i class="ph ph-check-circle"></i> ⚡ Key Highlights</div>
+            <ul class="styled-list">
+              <li><strong>Meta & Open Source:</strong> Originally created by Facebook (Meta) and maintained as a premier open-source project.</li>
+              <li><strong>Framework Agnostic:</strong> Works seamlessly with JavaScript and TypeScript applications across different libraries.</li>
+              <li><strong>Zero Configuration:</strong> Provides an out-of-the-box approach for common testing scenarios.</li>
+              <li><strong>All-in-One Features:</strong> Built-in test runner, assertion utilities, mocking mechanisms, and code coverage tools.</li>
+              <li><strong>Widespread Adoption:</strong> Widely used across React, Angular, Node.js, Vue, and enterprise ecosystems.</li>
+              <li><strong>Snapshot Testing:</strong> Capture rendered HTML or object trees to detect unintended UI regressions effortlessly.</li>
+            </ul>
+          </div>
+
+          <div style="margin-top: 1rem; background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: 10px; padding: 0.75rem 1rem;">
+            <div style="font-size: 0.88rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.25rem;">📌 Why Developers Choose Jest</div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0; line-height: 1.45;">
+              Combines fast feedback loops with zero setup friction, making unit testing an effortless part of daily development workflows.
+            </p>
+          </div>
         </div>
       </div>
     `,
-    notes: "Introduce Jest: Explain its origins at Meta, key zero-config features, built-in test runner, assertion engine, and ecosystem support."
+    notes: "Introduce Jest: Explain its origins at Meta, key zero-config features, architectural pillars (parallel workers, sandboxes, smart watch mode), built-in test runner, and snapshot testing."
   },
   {
     id: 3,
+    badge: "UNDER THE HOOD",
+    title: "Jest Architecture: Under the Hood",
+    subtitle: "Visual breakdown of Jest's test runner, worker pool, sandboxing, and execution lifecycle.",
+    layout: "full-image-layout",
+    content: `
+      <div class="glass-card" style="padding: 1.25rem; height: 100%; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
+        <div style="width: 100%; flex: 1; display: flex; align-items: center; justify-content: center; background: white; border-radius: 12px; padding: 0.75rem; border: 1px solid var(--surface-border); overflow: hidden;">
+          <img src="./assets/jest-hood.png" alt="Jest Under the Hood Architecture" style="max-width: 100%; max-height: 480px; object-fit: contain; border-radius: 8px; cursor: pointer; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));" />
+        </div>
+      </div>
+    `,
+    notes: "Explain Jest under the hood architecture: test runner, worker processes, jsdom sandboxing, and execution lifecycle."
+  },
+  {
+    id: 4,
     badge: "MIGRATION & PERFORMANCE",
     title: "Why Move from Karma to Jest?",
     subtitle: "Architectural comparison, performance gains, and maintenance overhead reduction.",
@@ -65,7 +134,7 @@ export const slidesData = [
         <div class="table-responsive" style="overflow-y: auto; overflow-x: auto; max-height: 380px; flex: 1; border-radius: 12px; border: 1px solid var(--surface-border);">
           <table class="styled-comparison-table" style="width: 100%; border-collapse: separate; border-spacing: 0;">
             <thead style="position: sticky; top: 0; z-index: 10;">
-              <tr style="background: rgba(18, 20, 32, 0.95); backdrop-filter: blur(8px);">
+              <tr style="background: rgb(244 244 244 / 32%); backdrop-filter: blur(10px);">
                 <th style="padding: 0.75rem 1.1rem; text-align: left; font-family: var(--font-heading); font-size: 1.05rem; color: #ef4444; border-bottom: 2px solid var(--surface-border); width: 50%;">
                   🐢 Karma Architecture
                 </th>
@@ -133,7 +202,22 @@ export const slidesData = [
     notes: "Compare Karma vs Jest: Explain startup overhead of Karma browsers vs Jest parallel Node.js/jsdom execution, snapshots, and lower CI resource usage."
   },
   {
-    id: 4,
+    id: 5,
+    badge: "KARMA VS JEST ARCHITECTURE",
+    title: "Karma vs Jest: Architectural Comparison",
+    subtitle: "Visual breakdown of Karma real-browser architecture vs Jest Node.js & jsdom execution model.",
+    layout: "full-image-layout",
+    content: `
+      <div class="glass-card" style="padding: 1.25rem; height: 100%; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
+        <div style="width: 100%; flex: 1; display: flex; align-items: center; justify-content: center; background: white; border-radius: 12px; padding: 0.75rem; border: 1px solid var(--surface-border); overflow: hidden;">
+          <img src="./assets/jest-karma-architecture.png" alt="Karma vs Jest Architecture Diagram" style="max-width: 100%; max-height: 480px; object-fit: contain; border-radius: 8px; cursor: pointer; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));" />
+        </div>
+      </div>
+    `,
+    notes: "Explain Karma vs Jest architecture diagram: Karma browser launcher and web server pipeline vs Jest Node.js process with jsdom sandboxing."
+  },
+  {
+    id: 6,
     badge: "ANGULAR TESTING EVOLUTION",
     title: "Angular Deprecated Karma: Moving to Modern Test Runners",
     subtitle: "Understanding the shift toward Vitest and API compatibility with Jest",
@@ -180,7 +264,7 @@ export const slidesData = [
 
           <div class="table-responsive" style="overflow-y: auto; max-height: 340px; border-radius: 8px; border: 1px solid var(--surface-border);">
             <table class="styled-comparison-table" style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
-              <thead style="position: sticky; top: 0; background: rgba(18, 20, 32, 0.95); z-index: 5;">
+              <thead style="position: sticky; top: 0; background: rgb(242 242 242 / 63%); backdrop-filter:  blur(8px); z-index: 5;">
                 <tr style="border-bottom: 1px solid var(--surface-border);">
                   <th style="padding: 0.5rem 0.8rem; text-align: left; color: var(--accent-primary);">Jest API</th>
                   <th style="padding: 0.5rem 0.8rem; text-align: left; color: var(--accent-secondary);">Vitest Equivalent</th>
@@ -205,7 +289,7 @@ export const slidesData = [
     notes: "Discuss Angular's deprecation of Karma and the shift to Vitest, highlighting how learning Jest provides near 1:1 API mapping with Vitest."
   },
   {
-    id: 5,
+    id: 7,
     badge: "SETUP & CONFIGURATION",
     title: "Installation & Setup Guide",
     subtitle: "Configuring Jest, Angular Testing Library, setup-jest.ts, and TypeScript spec options",
@@ -281,7 +365,7 @@ module.exports = {
     notes: "Walk through the 4 setup steps for Angular Jest integration: dependency installation, setup-jest.ts zone initialization, jest.config.js configuration, and tsconfig.spec.json types update."
   },
   {
-    id: 6,
+    id: 8,
     badge: "ANGULAR TESTING CORE",
     title: "Angular Testing Fundamentals",
     subtitle: "The Core Building Blocks & Execution Flow",
@@ -297,7 +381,7 @@ module.exports = {
 
             <div class="table-responsive" style="overflow-y: auto; max-height: 270px; border-radius: 8px; border: 1px solid var(--surface-border);">
               <table class="styled-comparison-table" style="width: 100%; border-collapse: collapse; font-size: 0.82rem;">
-                <thead style="position: sticky; top: 0; background: rgba(18, 20, 32, 0.95); z-index: 5;">
+                <thead style="position: sticky; top: 0; background: rgb(242 242 242 / 63%); backdrop-filter:  blur(8px); z-index: 5;">
                   <tr style="border-bottom: 1px solid var(--surface-border);">
                     <th style="padding: 0.45rem 0.75rem; text-align: left; color: var(--accent-primary); width: 35%;">Building Block</th>
                     <th style="padding: 0.45rem 0.75rem; text-align: left; color: var(--text-main);">Purpose</th>
@@ -369,7 +453,7 @@ module.exports = {
     notes: "Explain Angular Testing fundamentals: TestBed environment creation, ComponentFixture DOM wrapper, detectChanges lifecycle processing, and expect assertion verification."
   },
   {
-    id: 7,
+    id: 9,
     badge: "ASSERTIONS & SYNTAX",
     title: "Jest Matchers & Test Syntax",
     subtitle: "Matchers Cheat Sheet, Jasmine vs Jest Parity & Mocking Introduction",
@@ -385,7 +469,7 @@ module.exports = {
 
             <div class="table-responsive" style="overflow-y: auto; max-height: 380px; border-radius: 8px; border: 1px solid var(--surface-border);">
               <table class="styled-comparison-table" style="width: 100%; border-collapse: collapse; font-size: 0.8rem;">
-                <thead style="position: sticky; top: 0; background: rgba(18, 20, 32, 0.95); z-index: 5;">
+                <thead style="position: sticky; top: 0; background: rgb(242 242 242 / 63%); backdrop-filter:  blur(8px); z-index: 5;">
                   <tr style="border-bottom: 1px solid var(--surface-border);">
                     <th style="padding: 0.4rem 0.6rem; text-align: left; color: var(--accent-primary);">Jest Matcher</th>
                     <th style="padding: 0.4rem 0.6rem; text-align: left; color: var(--text-main);">Example Syntax</th>
@@ -418,7 +502,7 @@ module.exports = {
 
             <div class="table-responsive" style="overflow-y: auto; max-height: 180px; border-radius: 8px; border: 1px solid var(--surface-border); margin-bottom: 0.75rem;">
               <table class="styled-comparison-table" style="width: 100%; border-collapse: collapse; font-size: 0.78rem;">
-                <thead style="position: sticky; top: 0; background: rgba(18, 20, 32, 0.95); z-index: 5;">
+                <thead style="position: sticky; top: 0; background: rgb(242 242 242 / 63%); backdrop-filter:  blur(8px); z-index: 5;">
                   <tr style="border-bottom: 1px solid var(--surface-border);">
                     <th style="padding: 0.35rem 0.6rem; text-align: left; color: #f472b6;">Jasmine</th>
                     <th style="padding: 0.35rem 0.6rem; text-align: left; color: #38bdf8;">Jest</th>
@@ -464,7 +548,7 @@ module.exports = {
     notes: "Review Jest matchers cheat sheet, contrast Jasmine vs Jest syntax, and introduce Jest mocking fundamentals with jest.fn() and jest.spyOn()."
   },
   {
-    id: 8,
+    id: 10,
     badge: "COMPONENT TESTING",
     title: "Component Testing: Behavior to UI",
     subtitle: "Verifying Signal state updates, user events, and rendered DOM output",
@@ -568,7 +652,7 @@ module.exports = {
     notes: "Walk through complete component testing example: standalone component signal state, fixture initialization, button event triggers, change detection, and DOM assertions."
   },
   {
-    id: 9,
+    id: 11,
     badge: "SERVICE TESTING & HTTP MOCKING",
     title: "Testing Services: HttpClient Mocking",
     subtitle: "Unit testing Angular Services using HttpTestingController and Mock Data Responses",
@@ -667,7 +751,7 @@ module.exports = {
     notes: "Demonstrate Angular HTTP Service unit testing code with UserService and UserService Spec."
   },
   {
-    id: 10,
+    id: 12,
     badge: "SERVICE TESTING EXPLANATION",
     title: "HttpClient Mocking: Key Concepts",
     subtitle: "Understanding HttpTestingController Mechanisms & Test Execution Flow",
@@ -752,7 +836,7 @@ module.exports = {
     notes: "Explain the HTTP testing mechanisms with architecture image on left and mechanism breakdown + execution sequence stacked on right."
   },
   {
-    id: 11,
+    id: 13,
     badge: "REAL HTTP TESTING",
     title: "Testing Services with Real HTTP Calls",
     subtitle: "Executing Live Integration Unit Tests against Backend REST APIs using provideHttpClient()",
@@ -864,7 +948,7 @@ module.exports = {
     notes: "Demonstrate testing Angular services with real live HTTP network integration calls using provideHttpClient and firstValueFrom."
   },
   {
-    id: 12,
+    id: 14,
     badge: "REAL HTTP EXPLANATION",
     title: "What Happens When We Make a Real HTTP Call?",
     subtitle: "Understanding Network Flow & Lifecycle of Live HTTP Integration Requests",
@@ -935,7 +1019,7 @@ module.exports = {
     notes: "Explain the network mechanics and lifecycle of real live HTTP integration tests in Angular."
   },
   {
-    id: 13,
+    id: 15,
     badge: "ANGULAR LIBRARY CREATION",
     title: "Creating an Angular Library",
     subtitle: "Understanding Angular Libraries, Creation Steps, and Build Workflow",
@@ -1027,7 +1111,7 @@ ng build ui-lib --watch</pre>
     notes: "Explain Slide 13: What an Angular library is, Angular CLI generation commands, project structure, ng-packagr build commands, and package.json build scripts."
   },
   {
-    id: 14,
+    id: 16,
     badge: "LIBRARY TESTING ARCHITECTURE",
     title: "Testing Angular Library Components",
     subtitle: "Library Component Implementation, Test Spec & Testing Utility Breakdown",
@@ -1162,7 +1246,7 @@ ng build ui-lib --watch</pre>
     notes: "Explain Slide 14: Left side shows library component implementation and testing spec with explicit imports from @testing-library/angular; Right side details render, screen, fireEvent, data-testid, and testing actions."
   },
   {
-    id: 15,
+    id: 17,
     badge: "CODE COVERAGE & METRICS",
     title: "Code Coverage Guidelines",
     subtitle: "Understanding Metrics, Threshold Enforcement, Do's and Don'ts for High-Confidence Testing",
@@ -1244,7 +1328,7 @@ ng build ui-lib --watch</pre>
     notes: "Explain Slide 15: Code Coverage concept, core metrics (Statements, Branches, Functions, Lines), Jest threshold enforcement, and explicit Do's and Don'ts for high-quality testing."
   },
   {
-    id: 16,
+    id: 18,
     badge: "ENTERPRISE BEST PRACTICES",
     title: "Enterprise Testing Best Practices",
     subtitle: "Architectural Principles, Test Hygiene, and Scalable Testing Strategies for Production Teams",
@@ -1319,48 +1403,24 @@ ng build ui-lib --watch</pre>
     notes: "Explain Slide 16: Enterprise Testing Best Practices incorporating the 12 core principles across Architecture, Performance, Hygiene, and CI/CD."
   },
   {
-    id: 17,
-    badge: "CONCLUSION & ACKNOWLEDGMENT",
+    id: 19,
+    badge: "CONCLUSION",
     title: "Thank You!",
-    subtitle: "Modern Angular Unit Testing Presentation & Open Discussion",
+    subtitle: "Questions & Answers",
     layout: "hero-layout",
     content: `
-      <div class="hero-content-box text-center" style="max-width: 850px; margin: 0 auto;">
-        <div class="hero-header-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); padding: 0.3rem 1.1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; display: inline-block; margin-bottom: 0.8rem;">
-          🙏 THANK YOU FOR YOUR TIME & ATTENTION
-        </div>
-
-        <h1 class="slide-main-heading" style="font-size: 2.2rem; background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.6rem;">
-          Happy & High-Confidence Testing!
+      <div class="glass-card" style="padding: 3rem 2rem; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+        <h1 style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; letter-spacing: -0.5px;">
+          Thank You!
         </h1>
-
-        <p class="hero-description" style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
-          We sincerely appreciate your participation in this session on <strong>Modern Angular Unit Testing with Jest & Angular Testing Library</strong>. We hope these architecture patterns, best practices, and practical examples empower your engineering teams to build resilient, maintainable, and high-coverage Angular applications.
+        <div style="font-size: 1.8rem; font-weight: 600; color: var(--accent-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+          <span>💬 Questions & Answers</span>
+        </div>
+        <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 600px; line-height: 1.6; margin: 0;">
+          Feel free to ask any questions or share your thoughts!
         </p>
-
-        <div class="cards-grid-3" style="gap: 1rem; margin-bottom: 1.2rem; text-align: left;">
-          <div class="glass-card accent-violet" style="padding: 0.85rem 1rem;">
-            <div style="font-size: 0.82rem; font-weight: 700; color: #38bdf8; margin-bottom: 0.25rem;">💬 Open Discussion & Q&A</div>
-            <p style="font-size: 0.76rem; color: var(--text-muted); margin: 0; line-height: 1.4;">
-              We welcome any questions, feedback, or code walkthrough requests regarding Jest setup, Signal testing, library components, or coverage thresholds.
-            </p>
-          </div>
-
-          <div class="glass-card accent-violet" style="padding: 0.85rem 1rem;">
-            <div style="font-size: 0.82rem; font-weight: 700; color: #10b981; margin-bottom: 0.25rem;">🛠️ Enterprise Tech Stack</div>
-            <p style="font-size: 0.76rem; color: var(--text-muted); margin: 0; line-height: 1.4;">
-              Angular Standalone Components + Signals + Jest + Angular Testing Library + ng-packagr Library Architecture.
-            </p>
-          </div>
-        </div>
-
-        <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 10px; padding: 0.6rem 1.2rem; display: flex; justify-content: space-around; align-items: center; font-size: 0.82rem; color: var(--text-main);">
-          <span>⭐ <strong>Thank You All!</strong></span>
-          <span>🤝 <strong>Continuous Quality & Team Collaboration</strong></span>
-          <span>🚀 <strong>Ready for Production Deployment</strong></span>
-        </div>
       </div>
     `,
-    notes: "Wrap up the presentation with polite acknowledgments, invite questions from the audience, and open the floor for technical Q&A."
+    notes: "Wrap up the presentation, thank the audience, and open the floor for Questions & Answers."
   }
 ];
