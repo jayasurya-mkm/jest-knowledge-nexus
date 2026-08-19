@@ -1,28 +1,11 @@
-export const slidesData = [
-  {
-    id: 1,
-    badge: "",
-    title: "",
-    subtitle: "",
-    layout: "hero-layout",
-    image: "./assets/Banner.png",
-    content: `
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))r(s);new MutationObserver(s=>{for(const o of s)if(o.type==="childList")for(const a of o.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&r(a)}).observe(document,{childList:!0,subtree:!0});function t(s){const o={};return s.integrity&&(o.integrity=s.integrity),s.referrerPolicy&&(o.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?o.credentials="include":s.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function r(s){if(s.ep)return;s.ep=!0;const o=t(s);fetch(s.href,o)}})();const n=[{id:1,badge:"",title:"",subtitle:"",layout:"hero-layout",image:"./assets/Banner.png",content:`
       <div class="hero-banner-container" style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 16px;">
         <img src="./assets/Banner.png" alt="Hero Banner" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1;" />
         <div class="hero-content-box" style="position: relative; z-index: 2; padding: 2.5rem; border-radius: 20px; max-width: 950px; text-align: center;">
           <h1 class="slide-main-heading" style="font-size: 2.8rem; margin-bottom: 1rem; line-height: 1.2;">Modern Angular Unit Testing with Jest and Testing Library</h1>
         </div>
       </div>
-    `,
-    notes: "Welcome everyone! In this presentation, we explore Modern Angular Unit Testing using Jest and Angular Testing Library."
-  },
-  {
-    id: 2,
-    badge: " ",
-    title: "What is Jest ?",
-    subtitle: "Jest is a JavaScript testing framework designed for simplicity, speed, and minimal configuration.",
-    layout: "split-grid",
-    content: `
+    `,notes:"Welcome everyone! In this presentation, we explore Modern Angular Unit Testing using Jest and Angular Testing Library."},{id:2,badge:" ",title:"What is Jest ?",subtitle:"Jest is a JavaScript testing framework designed for simplicity, speed, and minimal configuration.",layout:"split-grid",content:`
       <div class="cards-grid-2">
         <div class="glass-card accent-violet">
           <div class="card-icon"><i class="ph ph-lightning"></i> 🚀 Framework Essence</div>
@@ -47,16 +30,7 @@ export const slidesData = [
           </ul>
         </div>
       </div>
-    `,
-    notes: "Introduce Jest: Explain its origins at Meta, key zero-config features, built-in test runner, assertion engine, and ecosystem support."
-  },
-  {
-    id: 3,
-    badge: "MIGRATION & PERFORMANCE",
-    title: "Why Move from Karma to Jest?",
-    subtitle: "Architectural comparison, performance gains, and maintenance overhead reduction.",
-    layout: "comparison-table-layout",
-    content: `
+    `,notes:"Introduce Jest: Explain its origins at Meta, key zero-config features, built-in test runner, assertion engine, and ecosystem support."},{id:3,badge:"MIGRATION & PERFORMANCE",title:"Why Move from Karma to Jest?",subtitle:"Architectural comparison, performance gains, and maintenance overhead reduction.",layout:"comparison-table-layout",content:`
       <div class="glass-card" style="padding: 1.5rem 1.75rem; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
         <p style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); margin-bottom: 1.25rem;">
           Moving from Karma to Jest significantly improves test execution speed and reduces maintenance overhead. Karma relies on launching real browsers (such as Chrome), adding startup and communication overhead, while Jest runs tests directly from the command line using Node.js and <code style="color: var(--accent-primary);">jsdom</code>. With built-in parallel test execution and minimal configuration, Jest provides a faster and more streamlined testing experience.
@@ -129,16 +103,7 @@ export const slidesData = [
           </table>
         </div>
       </div>
-    `,
-    notes: "Compare Karma vs Jest: Explain startup overhead of Karma browsers vs Jest parallel Node.js/jsdom execution, snapshots, and lower CI resource usage."
-  },
-  {
-    id: 4,
-    badge: "ANGULAR TESTING EVOLUTION",
-    title: "Angular Deprecated Karma: Moving to Modern Test Runners",
-    subtitle: "Understanding the shift toward Vitest and API compatibility with Jest",
-    layout: "split-grid",
-    content: `
+    `,notes:"Compare Karma vs Jest: Explain startup overhead of Karma browsers vs Jest parallel Node.js/jsdom execution, snapshots, and lower CI resource usage."},{id:4,badge:"ANGULAR TESTING EVOLUTION",title:"Angular Deprecated Karma: Moving to Modern Test Runners",subtitle:"Understanding the shift toward Vitest and API compatibility with Jest",layout:"split-grid",content:`
       <div class="cards-grid-2">
         <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between;">
           <div>
@@ -201,16 +166,7 @@ export const slidesData = [
           </div>
         </div>
       </div>
-    `,
-    notes: "Discuss Angular's deprecation of Karma and the shift to Vitest, highlighting how learning Jest provides near 1:1 API mapping with Vitest."
-  },
-  {
-    id: 5,
-    badge: "SETUP & CONFIGURATION",
-    title: "Installation & Setup Guide",
-    subtitle: "Configuring Jest, Angular Testing Library, setup-jest.ts, and TypeScript spec options",
-    layout: "split-grid",
-    content: `
+    `,notes:"Discuss Angular's deprecation of Karma and the shift to Vitest, highlighting how learning Jest provides near 1:1 API mapping with Vitest."},{id:5,badge:"SETUP & CONFIGURATION",title:"Installation & Setup Guide",subtitle:"Configuring Jest, Angular Testing Library, setup-jest.ts, and TypeScript spec options",layout:"split-grid",content:`
       <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
         <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem 1.4rem;">
           <div style="margin-bottom: 0.75rem;">
@@ -277,16 +233,7 @@ module.exports = {
           </div>
         </div>
       </div>
-    `,
-    notes: "Walk through the 4 setup steps for Angular Jest integration: dependency installation, setup-jest.ts zone initialization, jest.config.js configuration, and tsconfig.spec.json types update."
-  },
-  {
-    id: 6,
-    badge: "ANGULAR TESTING CORE",
-    title: "Angular Testing Fundamentals",
-    subtitle: "The Core Building Blocks & Execution Flow",
-    layout: "split-grid",
-    content: `
+    `,notes:"Walk through the 4 setup steps for Angular Jest integration: dependency installation, setup-jest.ts zone initialization, jest.config.js configuration, and tsconfig.spec.json types update."},{id:6,badge:"ANGULAR TESTING CORE",title:"Angular Testing Fundamentals",subtitle:"The Core Building Blocks & Execution Flow",layout:"split-grid",content:`
       <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
         <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem 1.4rem;">
           <div>
@@ -365,16 +312,7 @@ module.exports = {
           </div>
         </div>
       </div>
-    `,
-    notes: "Explain Angular Testing fundamentals: TestBed environment creation, ComponentFixture DOM wrapper, detectChanges lifecycle processing, and expect assertion verification."
-  },
-  {
-    id: 7,
-    badge: "ASSERTIONS & SYNTAX",
-    title: "Jest Matchers & Test Syntax",
-    subtitle: "Matchers Cheat Sheet, Jasmine vs Jest Parity & Mocking Introduction",
-    layout: "split-grid",
-    content: `
+    `,notes:"Explain Angular Testing fundamentals: TestBed environment creation, ComponentFixture DOM wrapper, detectChanges lifecycle processing, and expect assertion verification."},{id:7,badge:"ASSERTIONS & SYNTAX",title:"Jest Matchers & Test Syntax",subtitle:"Matchers Cheat Sheet, Jasmine vs Jest Parity & Mocking Introduction",layout:"split-grid",content:`
       <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
         <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
           <div>
@@ -460,16 +398,7 @@ module.exports = {
           </div>
         </div>
       </div>
-    `,
-    notes: "Review Jest matchers cheat sheet, contrast Jasmine vs Jest syntax, and introduce Jest mocking fundamentals with jest.fn() and jest.spyOn()."
-  },
-  {
-    id: 8,
-    badge: "COMPONENT TESTING",
-    title: "Component Testing: Behavior to UI",
-    subtitle: "Verifying Signal state updates, user events, and rendered DOM output",
-    layout: "split-grid",
-    content: `
+    `,notes:"Review Jest matchers cheat sheet, contrast Jasmine vs Jest syntax, and introduce Jest mocking fundamentals with jest.fn() and jest.spyOn()."},{id:8,badge:"COMPONENT TESTING",title:"Component Testing: Behavior to UI",subtitle:"Verifying Signal state updates, user events, and rendered DOM output",layout:"split-grid",content:`
       <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
         <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
           <div>
@@ -564,16 +493,7 @@ module.exports = {
           </div>
         </div>
       </div>
-    `,
-    notes: "Walk through complete component testing example: standalone component signal state, fixture initialization, button event triggers, change detection, and DOM assertions."
-  },
-  {
-    id: 9,
-    badge: "SERVICE TESTING & HTTP MOCKING",
-    title: "Testing Services: HttpClient Mocking",
-    subtitle: "Unit testing Angular Services using HttpTestingController and Mock Data Responses",
-    layout: "split-grid",
-    content: `
+    `,notes:"Walk through complete component testing example: standalone component signal state, fixture initialization, button event triggers, change detection, and DOM assertions."},{id:9,badge:"SERVICE TESTING & HTTP MOCKING",title:"Testing Services: HttpClient Mocking",subtitle:"Unit testing Angular Services using HttpTestingController and Mock Data Responses",layout:"split-grid",content:`
       <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
         <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
           <div>
@@ -663,16 +583,7 @@ module.exports = {
           </div>
         </div>
       </div>
-    `,
-    notes: "Demonstrate Angular HTTP Service unit testing code with UserService and UserService Spec."
-  },
-  {
-    id: 10,
-    badge: "SERVICE TESTING EXPLANATION",
-    title: "HttpClient Mocking: Key Concepts",
-    subtitle: "Understanding HttpTestingController Mechanisms & Test Execution Flow",
-    layout: "split-grid",
-    content: `
+    `,notes:"Demonstrate Angular HTTP Service unit testing code with UserService and UserService Spec."},{id:10,badge:"SERVICE TESTING EXPLANATION",title:"HttpClient Mocking: Key Concepts",subtitle:"Understanding HttpTestingController Mechanisms & Test Execution Flow",layout:"split-grid",content:`
       <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
         <!-- Left Column: In-Memory HTTP Mock Architecture Image & Description -->
         <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
@@ -748,16 +659,7 @@ module.exports = {
           </div>
         </div>
       </div>
-    `,
-    notes: "Explain the HTTP testing mechanisms with architecture image on left and mechanism breakdown + execution sequence stacked on right."
-  },
-  {
-    id: 11,
-    badge: "REAL HTTP TESTING",
-    title: "Testing Services with Real HTTP Calls",
-    subtitle: "Executing Live Integration Unit Tests against Backend REST APIs using provideHttpClient()",
-    layout: "split-grid",
-    content: `
+    `,notes:"Explain the HTTP testing mechanisms with architecture image on left and mechanism breakdown + execution sequence stacked on right."},{id:11,badge:"REAL HTTP TESTING",title:"Testing Services with Real HTTP Calls",subtitle:"Executing Live Integration Unit Tests against Backend REST APIs using provideHttpClient()",layout:"split-grid",content:`
       <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
         <!-- Left Column: UserService Implementation -->
         <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
@@ -860,16 +762,7 @@ module.exports = {
           </div>
         </div>
       </div>
-    `,
-    notes: "Demonstrate testing Angular services with real live HTTP network integration calls using provideHttpClient and firstValueFrom."
-  },
-  {
-    id: 12,
-    badge: "REAL HTTP EXPLANATION",
-    title: "What Happens When We Make a Real HTTP Call?",
-    subtitle: "Understanding Network Flow & Lifecycle of Live HTTP Integration Requests",
-    layout: "split-grid",
-    content: `
+    `,notes:"Demonstrate testing Angular services with real live HTTP network integration calls using provideHttpClient and firstValueFrom."},{id:12,badge:"REAL HTTP EXPLANATION",title:"What Happens When We Make a Real HTTP Call?",subtitle:"Understanding Network Flow & Lifecycle of Live HTTP Integration Requests",layout:"split-grid",content:`
       <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
         <!-- Left Side: Image / Architecture Diagram -->
         <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
@@ -931,16 +824,7 @@ module.exports = {
           </div>
         </div>
       </div>
-    `,
-    notes: "Explain the network mechanics and lifecycle of real live HTTP integration tests in Angular."
-  },
-  {
-    id: 13,
-    badge: "ANGULAR LIBRARY CREATION",
-    title: "Creating an Angular Library",
-    subtitle: "Understanding Angular Libraries, Creation Steps, and Build Workflow",
-    layout: "split-grid",
-    content: `
+    `,notes:"Explain the network mechanics and lifecycle of real live HTTP integration tests in Angular."},{id:13,badge:"ANGULAR LIBRARY CREATION",title:"Creating an Angular Library",subtitle:"Understanding Angular Libraries, Creation Steps, and Build Workflow",layout:"split-grid",content:`
       <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
         <!-- Left Column: What is an Angular Library & Creation Steps -->
         <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
@@ -1023,16 +907,7 @@ ng build ui-lib --watch</pre>
           </div>
         </div>
       </div>
-    `,
-    notes: "Explain Slide 13: What an Angular library is, Angular CLI generation commands, project structure, ng-packagr build commands, and package.json build scripts."
-  },
-  {
-    id: 14,
-    badge: "LIBRARY TESTING ARCHITECTURE",
-    title: "Testing Angular Library Components",
-    subtitle: "Library Component Implementation, Test Spec & Testing Utility Breakdown",
-    layout: "split-grid",
-    content: `
+    `,notes:"Explain Slide 13: What an Angular library is, Angular CLI generation commands, project structure, ng-packagr build commands, and package.json build scripts."},{id:14,badge:"LIBRARY TESTING ARCHITECTURE",title:"Testing Angular Library Components",subtitle:"Library Component Implementation, Test Spec & Testing Utility Breakdown",layout:"split-grid",content:`
       <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
         <!-- Left Column: Two Divisions (Top: Library Component Implementation, Bottom: Test Spec) -->
         <div style="display: flex; flex-direction: column; gap: 0.8rem;">
@@ -1158,16 +1033,7 @@ ng build ui-lib --watch</pre>
           </div>
         </div>
       </div>
-    `,
-    notes: "Explain Slide 14: Left side shows library component implementation and testing spec with explicit imports from @testing-library/angular; Right side details render, screen, fireEvent, data-testid, and testing actions."
-  },
-  {
-    id: 15,
-    badge: "CODE COVERAGE & METRICS",
-    title: "Code Coverage Guidelines",
-    subtitle: "Understanding Metrics, Threshold Enforcement, Do's and Don'ts for High-Confidence Testing",
-    layout: "vertical-rows",
-    content: `
+    `,notes:"Explain Slide 14: Left side shows library component implementation and testing spec with explicit imports from @testing-library/angular; Right side details render, screen, fireEvent, data-testid, and testing actions."},{id:15,badge:"CODE COVERAGE & METRICS",title:"Code Coverage Guidelines",subtitle:"Understanding Metrics, Threshold Enforcement, Do's and Don'ts for High-Confidence Testing",layout:"vertical-rows",content:`
       <div style="display: flex; flex-direction: column; gap: 0.75rem;">
         <!-- Row 1: What is Code Coverage & Core Metrics + Jest Config -->
         <div class="glass-card accent-violet" style="padding: 0.85rem 1.2rem;">
@@ -1240,16 +1106,7 @@ ng build ui-lib --watch</pre>
           </div>
         </div>
       </div>
-    `,
-    notes: "Explain Slide 15: Code Coverage concept, core metrics (Statements, Branches, Functions, Lines), Jest threshold enforcement, and explicit Do's and Don'ts for high-quality testing."
-  },
-  {
-    id: 16,
-    badge: "ENTERPRISE BEST PRACTICES",
-    title: "Enterprise Testing Best Practices",
-    subtitle: "Architectural Principles, Test Hygiene, and Scalable Testing Strategies for Production Teams",
-    layout: "cards-grid-4",
-    content: `
+    `,notes:"Explain Slide 15: Code Coverage concept, core metrics (Statements, Branches, Functions, Lines), Jest threshold enforcement, and explicit Do's and Don'ts for high-quality testing."},{id:16,badge:"ENTERPRISE BEST PRACTICES",title:"Enterprise Testing Best Practices",subtitle:"Architectural Principles, Test Hygiene, and Scalable Testing Strategies for Production Teams",layout:"cards-grid-4",content:`
       <div class="cards-grid-2" style="gap: 0.9rem; align-items: stretch;">
         <!-- Pillar 1: Architecture & Test Isolation -->
         <div class="glass-card accent-violet" style="padding: 0.9rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
@@ -1315,16 +1172,7 @@ ng build ui-lib --watch</pre>
           </div>
         </div>
       </div>
-    `,
-    notes: "Explain Slide 16: Enterprise Testing Best Practices incorporating the 12 core principles across Architecture, Performance, Hygiene, and CI/CD."
-  },
-  {
-    id: 17,
-    badge: "CONCLUSION & ACKNOWLEDGMENT",
-    title: "Thank You!",
-    subtitle: "Modern Angular Unit Testing Presentation & Open Discussion",
-    layout: "hero-layout",
-    content: `
+    `,notes:"Explain Slide 16: Enterprise Testing Best Practices incorporating the 12 core principles across Architecture, Performance, Hygiene, and CI/CD."},{id:17,badge:"CONCLUSION & ACKNOWLEDGMENT",title:"Thank You!",subtitle:"Modern Angular Unit Testing Presentation & Open Discussion",layout:"hero-layout",content:`
       <div class="hero-content-box text-center" style="max-width: 850px; margin: 0 auto;">
         <div class="hero-header-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); padding: 0.3rem 1.1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; display: inline-block; margin-bottom: 0.8rem;">
           🙏 THANK YOU FOR YOUR TIME & ATTENTION
@@ -1360,7 +1208,17 @@ ng build ui-lib --watch</pre>
           <span>🚀 <strong>Ready for Production Deployment</strong></span>
         </div>
       </div>
-    `,
-    notes: "Wrap up the presentation with polite acknowledgments, invite questions from the audience, and open the floor for technical Q&A."
-  }
-];
+    `,notes:"Wrap up the presentation with polite acknowledgments, invite questions from the audience, and open the floor for technical Q&A."}];class d{constructor(){this.slides=n,this.currentIndex=0,this.isPlaying=!1,this.playTimer=null,this.presentationTimer=null,this.secondsElapsed=0,this.body=document.body,this.slideCard=document.getElementById("active-slide-card"),this.currentIndexNum=document.getElementById("current-index-num"),this.totalSlidesNum=document.getElementById("total-slides-num"),this.deckTitleDisplay=document.getElementById("deck-title-display"),this.progressBarFill=document.getElementById("progress-bar-fill"),this.currentSlideBadge=document.getElementById("current-slide-badge"),this.themeSelect=document.getElementById("theme-select"),this.transitionSelect=document.getElementById("transition-select"),this.btnPrev=document.getElementById("btn-prev"),this.btnNext=document.getElementById("btn-next"),this.btnPlay=document.getElementById("btn-play"),this.playIcon=document.getElementById("play-icon"),this.playText=document.getElementById("play-text"),this.navPrevSide=document.getElementById("nav-prev-side"),this.navNextSide=document.getElementById("nav-next-side"),this.btnGrid=document.getElementById("btn-grid"),this.btnNotes=document.getElementById("btn-notes"),this.btnEdit=document.getElementById("btn-edit"),this.btnPrint=document.getElementById("btn-print"),this.btnFullscreen=document.getElementById("btn-fullscreen"),this.gridModalOverlay=document.getElementById("grid-modal-overlay"),this.slidesGridContainer=document.getElementById("slides-grid-container"),this.btnCloseGrid=document.getElementById("btn-close-grid"),this.speakerNotesDrawer=document.getElementById("speaker-notes-drawer"),this.btnCloseNotes=document.getElementById("btn-close-notes"),this.notesSlideTitle=document.getElementById("notes-slide-title"),this.notesContent=document.getElementById("notes-content"),this.timerDisplay=document.getElementById("timer-display"),this.btnResetTimer=document.getElementById("btn-reset-timer"),this.editModalOverlay=document.getElementById("edit-modal-overlay"),this.btnCloseEdit=document.getElementById("btn-close-edit"),this.btnSaveEdit=document.getElementById("btn-save-edit"),this.editBadge=document.getElementById("edit-badge"),this.editTitle=document.getElementById("edit-title"),this.editSubtitle=document.getElementById("edit-subtitle"),this.editContent=document.getElementById("edit-content"),this.editNotes=document.getElementById("edit-notes"),this.lightboxOverlay=document.getElementById("lightbox-modal-overlay"),this.lightboxImage=document.getElementById("lightbox-image"),this.btnCloseLightbox=document.getElementById("btn-close-lightbox"),this.init()}init(){this.totalSlidesNum.textContent=this.slides.length,this.renderSlide(0),this.buildGridThumbnails(),this.setupEventListeners(),this.startPresentationTimer()}renderSlide(e,t="next"){if(e<0||e>=this.slides.length)return;this.currentIndex=e;const r=this.slides[e],s=t==="next"?"slide-entering-next":"slide-entering-prev";this.slideCard.classList.remove("slide-entering-next","slide-entering-prev"),this.slideCard.offsetWidth,this.slideCard.classList.add(s);let o="";(r.badge||r.title||r.subtitle)&&(o=`
+        <div class="slide-header-badge">${r.badge||"SLIDE "+(e+1)}</div>
+        <h2 class="slide-title">${r.title}</h2>
+        ${r.subtitle?`<p class="slide-subtitle">${r.subtitle}</p>`:""}
+      `),this.slideCard.innerHTML=`
+      ${o}
+      <div class="slide-body-content">
+        ${r.content}
+      </div>
+    `,this.currentIndexNum.textContent=e+1,this.currentSlideBadge.textContent=r.badge||`SLIDE ${e+1}`;const a=(e+1)/this.slides.length*100;this.progressBarFill.style.width=`${a}%`,this.notesSlideTitle.textContent=`Slide ${e+1}: ${r.title}`,this.notesContent.innerHTML=r.notes||"No notes for this slide.",this.updateGridActiveState()}nextSlide(){this.currentIndex<this.slides.length-1?this.renderSlide(this.currentIndex+1,"next"):this.isPlaying&&this.togglePlay()}prevSlide(){this.currentIndex>0&&this.renderSlide(this.currentIndex-1,"prev")}goToSlide(e){const t=e>=this.currentIndex?"next":"prev";this.renderSlide(e,t)}togglePlay(){this.isPlaying=!this.isPlaying,this.isPlaying?(this.playIcon.className="ph ph-pause",this.playText.textContent="Pause",this.playTimer=setInterval(()=>this.nextSlide(),5e3)):(this.playIcon.className="ph ph-play",this.playText.textContent="Auto Play",clearInterval(this.playTimer))}startPresentationTimer(){this.presentationTimer=setInterval(()=>{this.secondsElapsed++;const e=Math.floor(this.secondsElapsed/60).toString().padStart(2,"0"),t=(this.secondsElapsed%60).toString().padStart(2,"0");this.timerDisplay.textContent=`${e}:${t}`},1e3)}resetPresentationTimer(){this.secondsElapsed=0,this.timerDisplay.textContent="00:00"}buildGridThumbnails(){this.slidesGridContainer.innerHTML="",this.slides.forEach((e,t)=>{const r=document.createElement("div");r.className=`grid-thumb-card ${t===this.currentIndex?"active":""}`,r.dataset.index=t,r.innerHTML=`
+        <div class="thumb-num">SLIDE ${t+1}</div>
+        <div class="thumb-title">${e.title}</div>
+        <div class="thumb-badge">${e.badge||""}</div>
+      `,r.addEventListener("click",()=>{this.goToSlide(t),this.toggleGridModal(!1)}),this.slidesGridContainer.appendChild(r)})}updateGridActiveState(){this.slidesGridContainer.querySelectorAll(".grid-thumb-card").forEach((t,r)=>{r===this.currentIndex?t.classList.add("active"):t.classList.remove("active")})}toggleGridModal(e){e===void 0?this.gridModalOverlay.classList.toggle("active"):this.gridModalOverlay.classList.toggle("active",e)}toggleSpeakerNotes(e){e===void 0?this.speakerNotesDrawer.classList.toggle("open"):this.speakerNotesDrawer.classList.toggle("open",e)}toggleFullscreen(){document.fullscreenElement?document.exitFullscreen&&document.exitFullscreen():document.documentElement.requestFullscreen().catch(e=>console.error(e))}openEditModal(){const e=this.slides[this.currentIndex];this.editBadge.value=e.badge||"",this.editTitle.value=e.title||"",this.editSubtitle.value=e.subtitle||"",this.editContent.value=e.content||"",this.editNotes.value=e.notes||"",this.editModalOverlay.classList.add("active")}saveEditModal(){const e=this.slides[this.currentIndex];e.badge=this.editBadge.value,e.title=this.editTitle.value,e.subtitle=this.editSubtitle.value,e.content=this.editContent.value,e.notes=this.editNotes.value,this.renderSlide(this.currentIndex),this.buildGridThumbnails(),this.editModalOverlay.classList.remove("active")}openImageLightbox(e,t=""){!this.lightboxOverlay||!this.lightboxImage||(this.lightboxImage.src=e,this.lightboxImage.alt=t||"Zoomed View",this.lightboxOverlay.classList.add("active"))}closeImageLightbox(){this.lightboxOverlay&&this.lightboxOverlay.classList.remove("active")}setupEventListeners(){this.btnNext.addEventListener("click",()=>this.nextSlide()),this.btnPrev.addEventListener("click",()=>this.prevSlide()),this.navNextSide.addEventListener("click",()=>this.nextSlide()),this.navPrevSide.addEventListener("click",()=>this.prevSlide()),this.btnPlay.addEventListener("click",()=>this.togglePlay()),this.slideCard.addEventListener("click",e=>{const t=e.target.closest("img");t&&t.src&&this.openImageLightbox(t.src,t.alt)}),this.btnCloseLightbox&&this.btnCloseLightbox.addEventListener("click",()=>this.closeImageLightbox()),this.lightboxOverlay&&this.lightboxOverlay.addEventListener("click",e=>{(e.target===this.lightboxOverlay||e.target===this.lightboxImage)&&this.closeImageLightbox()}),this.btnGrid.addEventListener("click",()=>this.toggleGridModal()),this.btnCloseGrid.addEventListener("click",()=>this.toggleGridModal(!1)),this.btnNotes.addEventListener("click",()=>this.toggleSpeakerNotes()),this.btnCloseNotes.addEventListener("click",()=>this.toggleSpeakerNotes(!1)),this.btnResetTimer.addEventListener("click",()=>this.resetPresentationTimer()),this.btnEdit.addEventListener("click",()=>this.openEditModal()),this.btnCloseEdit.addEventListener("click",()=>this.editModalOverlay.classList.remove("active")),this.btnSaveEdit.addEventListener("click",()=>this.saveEditModal()),this.btnPrint.addEventListener("click",()=>window.print()),this.btnFullscreen.addEventListener("click",()=>this.toggleFullscreen()),this.themeSelect.addEventListener("change",e=>{this.body.className=`${e.target.value} ${this.transitionSelect.value}`}),this.transitionSelect.addEventListener("change",e=>{this.body.className=`${this.themeSelect.value} ${e.target.value}`}),document.addEventListener("keydown",e=>{if(!(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))switch(e.code){case"ArrowRight":case"Space":case"PageDown":e.preventDefault(),this.nextSlide();break;case"ArrowLeft":case"PageUp":e.preventDefault(),this.prevSlide();break;case"Home":e.preventDefault(),this.goToSlide(0);break;case"End":e.preventDefault(),this.goToSlide(this.slides.length-1);break;case"KeyO":e.preventDefault(),this.toggleGridModal();break;case"KeyN":e.preventDefault(),this.toggleSpeakerNotes();break;case"KeyF":e.preventDefault(),this.toggleFullscreen();break;case"Escape":this.toggleGridModal(!1),this.toggleSpeakerNotes(!1),this.editModalOverlay.classList.remove("active"),this.closeImageLightbox();break}})}}document.addEventListener("DOMContentLoaded",()=>{window.app=new d});
