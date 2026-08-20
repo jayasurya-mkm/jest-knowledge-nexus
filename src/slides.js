@@ -653,6 +653,115 @@ module.exports = {
   },
   {
     id: 11,
+    badge: "MODERN TESTING WITH SIGNALS",
+    title: "Modern Testing with Signals: State, Computeds & Effects",
+    subtitle: "Testing standalone signals, computed reactivity, and side-effects using TestBed.runInInjectionContext & TestBed.tick()",
+    layout: "split-grid",
+    content: `
+      <div class="cards-grid-2" style="gap: 1.1rem; align-items: stretch;">
+        <div class="glass-card accent-violet" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
+          <div>
+            <div class="card-icon" style="margin-bottom: 0.35rem;"><i class="ph ph-lightning"></i> ⚡ Signal Testing Fundamentals</div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem;">
+              Testing Angular Signals involves verifying primitive writable signals, derived computed reactivity, and asynchronous effects.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 0.6rem;">
+              <div style="background: rgba(139, 92, 246, 0.12); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 8px; padding: 0.45rem 0.65rem;">
+                <div style="font-size: 0.74rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.15rem;">1. Writable Signals (<code>signal</code>)</div>
+                <p style="font-size: 0.68rem; color: var(--text-muted); margin: 0; line-height: 1.3;">Read via getter <code>val()</code>, mutate via <code>.set(newVal)</code> or <code>.update(fn)</code> directly in test cases.</p>
+              </div>
+
+              <div style="background: rgba(6, 182, 212, 0.12); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 8px; padding: 0.45rem 0.65rem;">
+                <div style="font-size: 0.74rem; font-weight: 700; color: var(--accent-secondary); margin-bottom: 0.15rem;">2. Computed Signals (<code>computed</code>)</div>
+                <p style="font-size: 0.68rem; color: var(--text-muted); margin: 0; line-height: 1.3;">Read-only derived signals that automatically recalculate when dependent signals change.</p>
+              </div>
+
+              <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 0.45rem 0.65rem;">
+                <div style="font-size: 0.74rem; font-weight: 700; color: #10b981; margin-bottom: 0.15rem;">3. Signal Effects (<code>effect</code>)</div>
+                <p style="font-size: 0.68rem; color: var(--text-muted); margin: 0; line-height: 1.3;">Execute in injection context via <code>TestBed.runInInjectionContext()</code> and flush via <code>TestBed.tick()</code>.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 0.55rem 0.75rem;">
+            <div style="font-size: 0.76rem; color: #10b981; font-weight: 700; margin-bottom: 0.15rem;">
+              🎯 Key Takeaway
+            </div>
+            <p style="font-size: 0.72rem; color: var(--text-muted); margin: 0; line-height: 1.35;">
+              Testing Signals requires no complex RxJS subscription management. Use direct getters, set/update methods, and <code>TestBed.tick()</code> for effects.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.3rem;">
+          <div>
+            <div class="card-icon" style="margin-bottom: 0.35rem;"><i class="ph ph-code"></i> 🧪 Direct Signal & Effect Test Suite Spec</div>
+
+            <div class="glass-card" style="padding: 0.6rem 0.8rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); margin-bottom: 0.6rem; overflow-y: auto; max-height: 350px;">
+              <div style="font-size: 0.7rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.3rem;">signal-api.spec.ts</div>
+              <pre style="margin: 0; font-size: 0.7rem; font-family: monospace; color: var(--text-main); line-height: 1.35;"><span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'Direct Signal API & Effect Testing'</span>, () =&gt; {
+  <span style="color: #38bdf8;">it</span>(<span style="color: #10b981;">'should test standalone signal set, update, and read inside testcase'</span>, () =&gt; {
+    <span style="color: #f472b6;">const</span> count = <span style="color: #38bdf8;">signal</span>(0);
+    <span style="color: #a78bfa;">expect</span>(count()).<span style="color: #34d399;">toBe</span>(0);
+
+    count.<span style="color: #34d399;">set</span>(10);
+    <span style="color: #a78bfa;">expect</span>(count()).<span style="color: #34d399;">toBe</span>(10);
+
+    count.<span style="color: #34d399;">update</span>(val =&gt; val + 5);
+    <span style="color: #a78bfa;">expect</span>(count()).<span style="color: #34d399;">toBe</span>(15);
+  });
+
+  <span style="color: #38bdf8;">it</span>(<span style="color: #10b981;">'should test computed signal reactivity inside testcase'</span>, () =&gt; {
+    <span style="color: #f472b6;">const</span> quantity = <span style="color: #38bdf8;">signal</span>(2);
+    <span style="color: #f472b6;">const</span> price = <span style="color: #38bdf8;">signal</span>(50);
+    <span style="color: #f472b6;">const</span> total = <span style="color: #38bdf8;">computed</span>(() =&gt; quantity() * price());
+
+    <span style="color: #a78bfa;">expect</span>(total()).<span style="color: #34d399;">toBe</span>(100);
+
+    quantity.<span style="color: #34d399;">set</span>(4);
+    <span style="color: #a78bfa;">expect</span>(total()).<span style="color: #34d399;">toBe</span>(200);
+  });
+
+  <span style="color: #38bdf8;">it</span>(<span style="color: #10b981;">'should test signal effect execution with TestBed.tick() inside testcase'</span>, () =&gt; {
+    <span style="color: #f472b6;">let</span> sideEffectLog = <span style="color: #10b981;">''</span>;
+
+    TestBed.<span style="color: #38bdf8;">runInInjectionContext</span>(() =&gt; {
+      <span style="color: #f472b6;">const</span> username = <span style="color: #38bdf8;">signal</span>(<span style="color: #10b981;">'Alice'</span>);
+
+      <span style="color: #38bdf8;">effect</span>(() =&gt; {
+        sideEffectLog = \`User: \${username()}\`;
+      });
+
+      TestBed.<span style="color: #34d399;">tick</span>();
+      <span style="color: #a78bfa;">expect</span>(sideEffectLog).<span style="color: #34d399;">toBe</span>(<span style="color: #10b981;">'User: Alice'</span>);
+
+      username.<span style="color: #34d399;">set</span>(<span style="color: #10b981;">'Bob'</span>);
+      TestBed.<span style="color: #34d399;">tick</span>();
+      <span style="color: #a78bfa;">expect</span>(sideEffectLog).<span style="color: #34d399;">toBe</span>(<span style="color: #10b981;">'User: Bob'</span>);
+    });
+  });
+});</pre>
+            </div>
+          </div>
+
+          <div style="background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: 8px; padding: 0.5rem 0.75rem;">
+            <div style="font-size: 0.73rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.3rem;">🔄 Signal Test Execution Lifecycle</div>
+            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.68rem; color: var(--text-muted); font-weight: 600;">
+              <span>signal() / set()</span> &rarr;
+              <span>computed()</span> &rarr;
+              <span>runInInjectionContext()</span> &rarr;
+              <span>TestBed.tick()</span> &rarr;
+              <span style="color: #10b981; font-weight: 700;">✓ PASS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    notes: "Walk through component testing using Signals directly in test cases: reading signal getters, setting signal state directly in tests, change detection, computed signal evaluation, and DOM assertions."
+  },
+  {
+    id: 12,
     badge: "SERVICE TESTING & HTTP MOCKING",
     title: "Testing Services: HttpClient Mocking",
     subtitle: "Unit testing Angular Services using HttpTestingController and Mock Data Responses",
@@ -751,7 +860,7 @@ module.exports = {
     notes: "Demonstrate Angular HTTP Service unit testing code with UserService and UserService Spec."
   },
   {
-    id: 12,
+    id: 13,
     badge: "SERVICE TESTING EXPLANATION",
     title: "HttpClient Mocking: Key Concepts",
     subtitle: "Understanding HttpTestingController Mechanisms & Test Execution Flow",
@@ -836,7 +945,7 @@ module.exports = {
     notes: "Explain the HTTP testing mechanisms with architecture image on left and mechanism breakdown + execution sequence stacked on right."
   },
   {
-    id: 13,
+    id: 14,
     badge: "REAL HTTP TESTING",
     title: "Testing Services with Real HTTP Calls",
     subtitle: "Executing Live Integration Unit Tests against Backend REST APIs using provideHttpClient()",
@@ -948,7 +1057,7 @@ module.exports = {
     notes: "Demonstrate testing Angular services with real live HTTP network integration calls using provideHttpClient and firstValueFrom."
   },
   {
-    id: 14,
+    id: 15,
     badge: "REAL HTTP EXPLANATION",
     title: "What Happens When We Make a Real HTTP Call?",
     subtitle: "Understanding Network Flow & Lifecycle of Live HTTP Integration Requests",
@@ -1019,7 +1128,7 @@ module.exports = {
     notes: "Explain the network mechanics and lifecycle of real live HTTP integration tests in Angular."
   },
   {
-    id: 15,
+    id: 16,
     badge: "ANGULAR LIBRARY CREATION",
     title: "Creating an Angular Library",
     subtitle: "Understanding Angular Libraries, Creation Steps, and Build Workflow",
@@ -1111,7 +1220,7 @@ ng build ui-lib --watch</pre>
     notes: "Explain Slide 13: What an Angular library is, Angular CLI generation commands, project structure, ng-packagr build commands, and package.json build scripts."
   },
   {
-    id: 16,
+    id: 17,
     badge: "LIBRARY TESTING ARCHITECTURE",
     title: "Testing Angular Library Components",
     subtitle: "Library Component Implementation, Test Spec & Testing Utility Breakdown",
@@ -1246,7 +1355,7 @@ ng build ui-lib --watch</pre>
     notes: "Explain Slide 14: Left side shows library component implementation and testing spec with explicit imports from @testing-library/angular; Right side details render, screen, fireEvent, data-testid, and testing actions."
   },
   {
-    id: 17,
+    id: 18,
     badge: "CODE COVERAGE & METRICS",
     title: "Code Coverage Guidelines",
     subtitle: "Understanding Metrics, Threshold Enforcement, Do's and Don'ts for High-Confidence Testing",
@@ -1328,7 +1437,7 @@ ng build ui-lib --watch</pre>
     notes: "Explain Slide 15: Code Coverage concept, core metrics (Statements, Branches, Functions, Lines), Jest threshold enforcement, and explicit Do's and Don'ts for high-quality testing."
   },
   {
-    id: 18,
+    id: 19,
     badge: "ENTERPRISE BEST PRACTICES",
     title: "Enterprise Testing Best Practices",
     subtitle: "Architectural Principles, Test Hygiene, and Scalable Testing Strategies for Production Teams",
@@ -1403,7 +1512,7 @@ ng build ui-lib --watch</pre>
     notes: "Explain Slide 16: Enterprise Testing Best Practices incorporating the 12 core principles across Architecture, Performance, Hygiene, and CI/CD."
   },
   {
-    id: 19,
+    id: 20,
     badge: "CONCLUSION",
     title: "Thank You!",
     subtitle: "Questions & Answers",
