@@ -28,7 +28,7 @@ export const slidesData = [
           <div>
             <div class="card-icon" style="margin-bottom: 0.6rem;"><i class="ph ph-lightning"></i> 🚀 Framework Essence</div>
             <p style="font-size: 0.95rem; line-height: 1.55; color: var(--text-main); margin-bottom: 1rem;">
-              Jest is a modern, battery-included JavaScript testing framework engineered by Meta for ultra-fast execution, zero configuration overhead, and an intuitive developer experience.
+              Jest is a modern, open-source JavaScript testing framework developed and maintained by Meta for fast execution, minimal configuration overhead, and a great developer experience.
             </p>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1rem;">
@@ -600,7 +600,11 @@ module.exports = {
 
             <div class="glass-card" style="padding: 0.6rem 0.8rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); margin-bottom: 0.6rem; overflow-y: auto; max-height: 350px;">
               <div style="font-size: 0.7rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.3rem;">counter.component.spec.ts</div>
-              <pre style="margin: 0; font-size: 0.75rem; font-family: monospace; color: var(--text-main); line-height: 1.35;"><span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'CounterComponent'</span>, () =&gt; {
+              <pre style="margin: 0; font-size: 0.68rem; font-family: monospace; color: var(--text-main); line-height: 1.35;"><span style="color: #f472b6;">import</span> { ComponentFixture, TestBed } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/core/testing'</span>;
+<span style="color: #f472b6;">import</span> { By } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/platform-browser'</span>;
+<span style="color: #f472b6;">import</span> { CounterComponent } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'./counter.component'</span>;
+
+<span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'CounterComponent'</span>, () =&gt; {
   <span style="color: #f472b6;">let</span> fixture: ComponentFixture&lt;CounterComponent&gt;;
   <span style="color: #f472b6;">let</span> component: CounterComponent;
 
@@ -700,7 +704,10 @@ module.exports = {
 
             <div class="glass-card" style="padding: 0.6rem 0.8rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); margin-bottom: 0.6rem; overflow-y: auto; max-height: 350px;">
               <div style="font-size: 0.7rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.3rem;">signal-api.spec.ts</div>
-              <pre style="margin: 0; font-size: 0.7rem; font-family: monospace; color: var(--text-main); line-height: 1.35;"><span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'Direct Signal API & Effect Testing'</span>, () =&gt; {
+              <pre style="margin: 0; font-size: 0.65rem; font-family: monospace; color: var(--text-main); line-height: 1.35;"><span style="color: #f472b6;">import</span> { signal, computed, effect } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/core'</span>;
+<span style="color: #f472b6;">import</span> { TestBed } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/core/testing'</span>;
+
+<span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'Direct Signal API & Effect Testing'</span>, () =&gt; {
   <span style="color: #38bdf8;">it</span>(<span style="color: #10b981;">'should test standalone signal set, update, and read inside testcase'</span>, () =&gt; {
     <span style="color: #f472b6;">const</span> count = <span style="color: #38bdf8;">signal</span>(0);
     <span style="color: #a78bfa;">expect</span>(count()).<span style="color: #34d399;">toBe</span>(0);
@@ -773,7 +780,13 @@ module.exports = {
             <div class="card-icon" style="margin-bottom: 0.4rem;"><i class="ph ph-wrench"></i> 🛠️ UserService Implementation</div>
             <div class="glass-card" style="padding: 0.75rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-primary); overflow-y: auto; max-height: 380px;">
               <div style="font-size: 0.7rem; color: var(--accent-primary); font-weight: 700; margin-bottom: 0.3rem;">user.service.ts</div>
-              <pre style="margin: 0; font-size: 0.68rem; font-family: monospace; color: var(--text-main); line-height: 1.38;"><span style="color: #38bdf8;">@Injectable</span>({ providedIn: <span style="color: #10b981;">'root'</span> })
+              <pre style="margin: 0; font-size: 0.62rem; font-family: monospace; color: var(--text-main); line-height: 1.36;"><span style="color: #f472b6;">import</span> { Injectable, inject } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/core'</span>;
+<span style="color: #f472b6;">import</span> { HttpClient } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/common/http'</span>;
+<span style="color: #f472b6;">import</span> { Observable } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'rxjs'</span>;
+<span style="color: #f472b6;">import</span> { map } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'rxjs/operators'</span>;
+<span style="color: #f472b6;">import</span> { User, CreateUserDto } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'./user.model'</span>;
+
+<span style="color: #38bdf8;">@Injectable</span>({ providedIn: <span style="color: #10b981;">'root'</span> })
 <span style="color: #f472b6;">export class</span> <span style="color: #38bdf8;">UserService</span> {
   <span style="color: #f472b6;">private</span> http = <span style="color: #38bdf8;">inject</span>(HttpClient);
   <span style="color: #f472b6;">private</span> apiUrl = <span style="color: #10b981;">'https://jsonplaceholder.typicode.com/users'</span>;
@@ -819,7 +832,12 @@ module.exports = {
             <div class="card-icon" style="margin-bottom: 0.4rem;"><i class="ph ph-test-tube"></i> 🧪 UserService Spec (HttpTestingController)</div>
             <div class="glass-card" style="padding: 0.75rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); overflow-y: auto; max-height: 380px;">
               <div style="font-size: 0.7rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.3rem;">user.service.spec.ts</div>
-              <pre style="margin: 0; font-size: 0.68rem; font-family: monospace; color: var(--text-main); line-height: 1.38;"><span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'UserService (HTTP Testing)'</span>, () =&gt; {
+              <pre style="margin: 0; font-size: 0.62rem; font-family: monospace; color: var(--text-main); line-height: 1.36;"><span style="color: #f472b6;">import</span> { TestBed } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/core/testing'</span>;
+<span style="color: #f472b6;">import</span> { HttpTestingController, provideHttpClientTesting } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/common/http/testing'</span>;
+<span style="color: #f472b6;">import</span> { UserService } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'./user.service'</span>;
+<span style="color: #f472b6;">import</span> { mockUsers } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'./user.mock'</span>;
+
+<span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'UserService (HTTP Testing)'</span>, () =&gt; {
   <span style="color: #f472b6;">let</span> service: UserService;
   <span style="color: #f472b6;">let</span> httpMock: HttpTestingController;
 
@@ -958,7 +976,13 @@ module.exports = {
             <div class="card-icon" style="margin-bottom: 0.4rem;"><i class="ph ph-wrench"></i> 🛠️ UserService Implementation</div>
             <div class="glass-card" style="padding: 0.75rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-primary); overflow-y: auto; max-height: 380px;">
               <div style="font-size: 0.7rem; color: var(--accent-primary); font-weight: 700; margin-bottom: 0.3rem;">user.service.ts</div>
-              <pre style="margin: 0; font-size: 0.75rem; font-family: monospace; color: var(--text-main); line-height: 1.38;"><span style="color: #38bdf8;">@Injectable</span>({ providedIn: <span style="color: #10b981;">'root'</span> })
+              <pre style="margin: 0; font-size: 0.62rem; font-family: monospace; color: var(--text-main); line-height: 1.36;"><span style="color: #f472b6;">import</span> { Injectable, inject } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/core'</span>;
+<span style="color: #f472b6;">import</span> { HttpClient } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/common/http'</span>;
+<span style="color: #f472b6;">import</span> { Observable } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'rxjs'</span>;
+<span style="color: #f472b6;">import</span> { map } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'rxjs/operators'</span>;
+<span style="color: #f472b6;">import</span> { User, CreateUserDto } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'./user.model'</span>;
+
+<span style="color: #38bdf8;">@Injectable</span>({ providedIn: <span style="color: #10b981;">'root'</span> })
 <span style="color: #f472b6;">export class</span> <span style="color: #38bdf8;">UserService</span> {
   <span style="color: #f472b6;">private</span> http = <span style="color: #38bdf8;">inject</span>(HttpClient);
   <span style="color: #f472b6;">private</span> apiUrl = <span style="color: #10b981;">'https://jsonplaceholder.typicode.com/users'</span>;
@@ -1007,7 +1031,12 @@ module.exports = {
             <div class="card-icon" style="margin-bottom: 0.4rem;"><i class="ph ph-cloud-arrow-up"></i> 🌐 UserService (Real Live API Integration Test)</div>
             <div class="glass-card" style="padding: 0.75rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid var(--accent-secondary); overflow-y: auto; max-height: 320px; margin-bottom: 0.6rem;">
               <div style="font-size: 0.7rem; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.3rem;">user.service.integration.spec.ts</div>
-              <pre style="margin: 0; font-size: 0.66rem; font-family: monospace; color: var(--text-main); line-height: 1.36;"><span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'UserService (Real Live API Integration Test)'</span>, () =&gt; {
+              <pre style="margin: 0; font-size: 0.61rem; font-family: monospace; color: var(--text-main); line-height: 1.35;"><span style="color: #f472b6;">import</span> { TestBed } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/core/testing'</span>;
+<span style="color: #f472b6;">import</span> { provideHttpClient } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/common/http'</span>;
+<span style="color: #f472b6;">import</span> { firstValueFrom } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'rxjs'</span>;
+<span style="color: #f472b6;">import</span> { UserService } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'./user.service'</span>;
+
+<span style="color: #f472b6;">describe</span>(<span style="color: #10b981;">'UserService (Real Live API Integration Test)'</span>, () =&gt; {
   <span style="color: #f472b6;">let</span> service: UserService;
 
   <span style="color: #f472b6;">beforeEach</span>(() =&gt; {
@@ -1197,12 +1226,16 @@ ng build ui-lib --watch</pre>
 
             <div class="glass-card" style="padding: 0.75rem 0.85rem; border-radius: 8px; background: var(--surface-glass); backdrop-filter: blur(8px); border: 1px solid #10b981;">
               <div style="font-size: 0.72rem; color: #10b981; font-weight: 700; margin-bottom: 0.3rem;">3. Consuming Library Components in App</div>
-              <pre style="margin: 0; font-size: 0.7rem; font-family: monospace; color: var(--text-main); line-height: 1.35;"><span style="color: var(--text-muted); font-style: italic;">// Import directly from the built library package</span>
+              <pre style="margin: 0; font-size: 0.68rem; font-family: monospace; color: var(--text-main); line-height: 1.35;"><span style="color: #f472b6;">import</span> { Component } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'@angular/core'</span>;
 <span style="color: #f472b6;">import</span> { LibUserFormComponent } <span style="color: #f472b6;">from</span> <span style="color: #10b981;">'ui-lib'</span>;
 
 <span style="color: #38bdf8;">@Component</span>({
-  imports: [LibUserFormComponent], ...
-})</pre>
+  selector: <span style="color: #10b981;">'app-root'</span>,
+  standalone: <span style="color: #f59e0b;">true</span>,
+  imports: [LibUserFormComponent],
+  template: <span style="color: #10b981;">\`&lt;lib-user-form&gt;&lt;/lib-user-form&gt;\`</span>
+})
+<span style="color: #f472b6;">export class</span> <span style="color: #38bdf8;">AppComponent</span> {}</pre>
             </div>
           </div>
 
